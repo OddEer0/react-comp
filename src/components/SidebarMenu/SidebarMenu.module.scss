@@ -1,0 +1,84 @@
+.sidebar {
+	position: relative;
+	max-width: 370px;
+	font-weight: 500;
+	position: relative;
+	z-index: 1000;
+}
+
+.sidebarItem {
+	display: flex;
+	align-items: center;
+	padding: 12px;
+	border-bottom: 1px solid rgba(1, 1, 1, 0.11);
+	background-color: white;
+	cursor: pointer;
+	transition: background 0.3s ease-in-out;
+
+	&:hover {
+		background: #f4f8fb;
+		color: #01579b;
+
+		.arrow {
+			transform: translateX(5px);
+		}
+	}
+
+	h4 {
+		margin-left: 8px;
+		transition: color 0.3s ease-in-out;
+	}
+}
+
+.arrow {
+	position: absolute;
+	right: 12px;
+	transform: translateX(0);
+	transition: transform 0.3s ease-in-out;
+}
+
+.sidebarModal {
+	height: 100%;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+	&.modalActive {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 500;
+	background-color: rgba(0, 0, 0, 0.5);
+	width: 100%;
+	height: 100vh;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+	&.modalActive {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
+.content {
+	position: absolute;
+	top: 0;
+	left: 100%;
+	height: 100%;
+	padding: 20px;
+	background-color: white;
+	width: 1024px;
+	border-radius: 0 4px 4px 0;
+}
+
+.itemActive {
+	background: #f4f8fb;
+	color: #01579b;
+}

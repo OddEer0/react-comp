@@ -36,21 +36,37 @@ const Header: FC<HeaderProps> = props => {
 							<li>Скупка Б/У</li>
 							<li>Контакты</li>
 						</ul>
-						<img className={styles.logoWhite} src='img/icon/logo2.png' alt='' />
-						<img className={styles.auth} src='img/icon/user.png' alt='' />
-						<img className={styles.phone} src='img/icon/phone.png' alt='' />
+						<img
+							className={styles.logoWhite}
+							src='/img/icon/header/logo2.svg'
+							alt=''
+						/>
+						<img
+							className={styles.auth}
+							src='/img/icon/header/user.svg'
+							alt=''
+						/>
+						<img
+							className={styles.phone}
+							src='/img/icon/header/phone.svg'
+							alt=''
+						/>
 					</div>
 				</div>
 			</nav>
 			<nav className={styles.navbarTwo}>
 				<div className='container'>
 					<div className={styles.navbarTwoContent}>
-						<img className={styles.logo} src='img/icon/logo.png' alt='' />
+						<img
+							className={styles.logo}
+							src='/img/icon/header/logo.svg'
+							alt=''
+						/>
 						<button className={styles.greenButton}>
 							Каталог товаров
 							<img
 								className={styles.greenButtonIcon}
-								src='img/icon/catalog.png'
+								src='/img/icon/header/catalog.svg'
 								alt=''
 							/>
 						</button>
@@ -62,22 +78,22 @@ const Header: FC<HeaderProps> = props => {
 								placeholder='Поиск'
 							/>
 							<label htmlFor='search' className={styles.searchBlockIcon}>
-								<img src='img/icon/search.png' alt='' />
+								<img src='/img/icon/header/search.svg' alt='' />
 							</label>
 						</div>
 						<img
 							className={styles.searchIcon}
-							src='img/icon/search-mobile.png'
+							src='/img/icon/header/search-mobile.svg'
 							alt=''
 						/>
 						<div className={styles.contact}>050 065 87 96</div>
 						<div className={styles.iconList}>
-							<img alt='' src='img/icon/scales.png' />
-							<img alt='' src='img/icon/heart.png' />
-							<img alt='' src='img/icon/cart.png' />
+							<img alt='' src='/img/icon/header/scales.svg' />
+							<img alt='' src='/img/icon/header/heart.svg' />
+							<img alt='' src='/img/icon/header/cart.svg' />
 						</div>
 						<div className={styles.iconListWhite}>
-							<img alt='' src='img/icon/cart-white.png' />
+							<img alt='' src='/img/icon/header/cart-white.svg' />
 						</div>
 					</div>
 				</div>

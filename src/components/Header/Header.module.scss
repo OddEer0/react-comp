@@ -1,6 +1,11 @@
 .header {
 	width: 100%;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.06);
+	position: fixed;
+	z-index: 10000;
+	top: 0;
+	left: 0;
+	width: 100%;
 }
 
 .navbarOne {
@@ -26,6 +31,12 @@
 
 	li {
 		font-size: 16px;
+		cursor: pointer;
+		transition: opacity 0.3s ease-in-out;
+
+		&:hover {
+			opacity: 0.8;
+		}
 	}
 
 	li:not(:last-child) {
@@ -35,6 +46,7 @@
 
 .navbarTwo {
 	height: 97px;
+	background-color: white;
 }
 
 .navbarTwoContent {
@@ -47,9 +59,11 @@
 .searchBlock {
 	flex: 1;
 	border: 1px solid #e6e6e6;
+	background: white;
 	max-width: 758px;
 	height: 42px;
 	display: flex;
+	border-radius: 4px;
 }
 
 .searchBlockInput {
@@ -63,12 +77,17 @@
 
 .searchBlockIcon {
 	width: 48px;
-	height: 42px;
+	height: 100%;
 	background: #01579b;
 	border-radius: 0px 4px 4px 0px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	transition: background 0.3s ease-in-out;
+
+	&:hover {
+		background: #0c1c76;
+	}
 }
 
 .iconList {
@@ -89,7 +108,7 @@
 }
 
 .greenButton {
-	background-color: #06a56c;
+	background: #06a56c;
 	display: flex;
 	align-items: center;
 	padding: 9px 12px;
@@ -97,14 +116,30 @@
 	color: white;
 	margin-right: 16px;
 	min-width: 180px;
+	transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+
+	&:hover {
+		color: rgba(255, 255, 255, 0.8);
+		background: #09915f;
+
+		img {
+			opacity: 0.8;
+		}
+	}
 
 	img {
+		transition: opacity 0.3s ease-in-out;
 		margin-left: 10px;
 	}
 }
 
 .auth {
 	cursor: pointer;
+	transition: opacity 0.3s ease-in-out;
+
+	&:hover {
+		opacity: 0.8;
+	}
 }
 
 .contact {
