@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import styles from './Header.module.scss'
 import { headerImage } from '../../shared/img'
 import List from '../UI/List/List'
+import GreenButton from '../UI/GreenButton/GreenButton'
 
 interface HeaderProps {}
 
@@ -55,14 +56,7 @@ const Header: FC<HeaderProps> = props => {
 					<div className={styles.navbarTwoContent}>
 						<img className={styles.logo} src={headerImage.Logo} alt='' />
 						<Link to='/react-comp/catalog'>
-							<button className={styles.greenButton}>
-								Каталог товаров
-								<img
-									className={styles.greenButtonIcon}
-									src={headerImage.catalog}
-									alt=''
-								/>
-							</button>
+							<GreenButton title='Каталог товаров' src={headerImage.catalog} />
 						</Link>
 						<div className={styles.searchBlock}>
 							<input

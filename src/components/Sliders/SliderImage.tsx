@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import Slider from 'react-slick'
-import { SliderImageItems } from '../../mock/SliderImage'
 import 'slick-carousel/slick/slick.css'
+import { sliderImage } from '../../shared/img'
 import styles from './SliderImage.module.scss'
 
 interface SliderImageProps {}
@@ -16,8 +16,8 @@ const SliderImage: FC<SliderImageProps> = props => {
 				arrows={false}
 				className={styles.slider}
 			>
-				{SliderImageItems.map(image => (
-					<img key={image.id} src={image.imgUrl} alt='' />
+				{sliderImage.map((image, index) => (
+					<img key={index} src={image} alt='' />
 				))}
 			</Slider>
 		</div>

@@ -10,6 +10,12 @@ import search from './icon/header/search.svg'
 import searchMobile from './icon/header/search-mobile.svg'
 import scales from './icon/header/scales.svg'
 
+import sliderImage1 from './sliderImg/1.jpg'
+import sliderImage2 from './sliderImg/2.jpg'
+import sliderImage3 from './sliderImg/3.jpg'
+import sliderImage4 from './sliderImg/4.jpg'
+import sliderImage5 from './sliderImg/5.jpg'
+
 import category1 from './icon/sidebar/3.svg'
 import category2 from './icon/sidebar/2.svg'
 import category3 from './icon/sidebar/1.svg'
@@ -54,4 +60,12 @@ export const categoryImage = [
 	category9,
 	category10,
 	category11,
+]
+
+export const sliderImage = [
+	sliderImage1,
+	sliderImage2,
+	sliderImage3,
+	sliderImage4,
+	sliderImage5,
 ]

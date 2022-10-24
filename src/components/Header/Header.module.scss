@@ -107,32 +107,6 @@
 	}
 }
 
-.greenButton {
-	background: #06a56c;
-	display: flex;
-	align-items: center;
-	padding: 9px 12px;
-	border-radius: 4px;
-	color: white;
-	margin-right: 16px;
-	min-width: 180px;
-	transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
-
-	&:hover {
-		color: rgba(255, 255, 255, 0.8);
-		background: #09915f;
-
-		img {
-			opacity: 0.8;
-		}
-	}
-
-	img {
-		transition: opacity 0.3s ease-in-out;
-		margin-left: 10px;
-	}
-}
-
 .auth {
 	cursor: pointer;
 	transition: opacity 0.3s ease-in-out;
