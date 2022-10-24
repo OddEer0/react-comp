@@ -1,14 +1,21 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Header from './components/Header/Header'
-import Home from './pages/Home/Home'
+import PageLayout from './components/PageLayout'
+import CatalogPage from './pages/Catalogpage/Catalogpage'
+import DevicePage from './pages/Devicepage/Devicepage'
+import HomePage from './pages/Homepage/Homepage'
 
 function App() {
 	return (
 		<div>
-			<Header />
 			<Routes>
-				<Route path='/comp/home' element={<Home />} />
+				<Route path='/comp/' element={<PageLayout />}>
+					<Route index element={<HomePage />} />
+					<Route path='catalog' element={<CatalogPage />} />
+					<Route path='catalog/:category' element={<DevicePage />} />
+					<Route path='catalog/:category/:id' element={<DevicePage />} />
+				</Route>
 			</Routes>
 		</div>
 	)

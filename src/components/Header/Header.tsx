@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { FC, useCallback, useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import styles from './Header.module.scss'
 
 interface HeaderProps {}
@@ -62,14 +63,16 @@ const Header: FC<HeaderProps> = props => {
 							src='/img/icon/header/logo.svg'
 							alt=''
 						/>
-						<button className={styles.greenButton}>
-							Каталог товаров
-							<img
-								className={styles.greenButtonIcon}
-								src='/img/icon/header/catalog.svg'
-								alt=''
-							/>
-						</button>
+						<Link to='/comp/catalog'>
+							<button className={styles.greenButton}>
+								Каталог товаров
+								<img
+									className={styles.greenButtonIcon}
+									src='/img/icon/header/catalog.svg'
+									alt=''
+								/>
+							</button>
+						</Link>
 						<div className={styles.searchBlock}>
 							<input
 								id='search'

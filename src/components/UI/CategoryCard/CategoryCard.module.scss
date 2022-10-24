@@ -1,0 +1,32 @@
+.card {
+	width: 250px;
+	height: 320px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-around;
+	box-shadow: 0 0 5px black;
+	border-radius: 4px;
+	margin: 40px 50px;
+	transition: transform 0.3s ease-in-out;
+	cursor: pointer;
+
+	&:hover {
+		transform: translateY(-10px);
+
+		h4 {
+			color: #060f42;
+		}
+	}
+
+	img {
+		width: 210px;
+		height: 210px;
+	}
+
+	h4 {
+		font-size: 24px;
+		text-align: center;
+		font-weight: 550;
+	}
+}

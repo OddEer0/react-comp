@@ -1,0 +1,30 @@
+.slick-dots {
+	position: absolute;
+	bottom: 40px;
+	left: 40px;
+	li {
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		margin: 0 5px;
+		font-size: 0;
+		position: relative;
+
+		&.slick-active {
+			button {
+				background: #01579b;
+			}
+		}
+
+		button {
+			display: block;
+			position: absolute;
+			top: 5px;
+			left: 5px;
+			width: 10px;
+			height: 10px;
+			background-color: white;
+			border-radius: 50%;
+		}
+	}
+}

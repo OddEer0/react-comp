@@ -1,9 +1,10 @@
 import React, { FC } from 'react'
+import { Outlet } from 'react-router-dom'
 import HomeFirstSection from './sections/FirstSection/HomeFirstSecrion'
 
-interface HomeProps {}
+interface HomePageProps {}
 
-const Home: FC<HomeProps> = props => {
+const HomePage: FC<HomePageProps> = props => {
 	return (
 		<main>
 			<HomeFirstSection />
@@ -11,4 +12,4 @@ const Home: FC<HomeProps> = props => {
 	)
 }
 
-export default Home
+export default HomePage

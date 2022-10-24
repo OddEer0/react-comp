@@ -1,0 +1,25 @@
+.section {
+	display: flex;
+}
+
+.container {
+	display: flex;
+	overflow: hidden;
+}
+
+.content {
+	max-width: 1145px;
+	width: calc(100% - 386px);
+}
+
+@media screen and (max-width: 1225px) {
+	.content {
+		width: calc(100% - 336px);
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.content {
+		width: 100%;
+	}
+}
