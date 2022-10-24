@@ -1,5 +1,4 @@
 import React, { FC } from 'react'
-import { Outlet } from 'react-router-dom'
 import HomeFirstSection from './sections/FirstSection/HomeFirstSecrion'
 
 interface HomePageProps {}

@@ -2,10 +2,20 @@
 import React, { FC, useCallback, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './Header.module.scss'
+import { headerImage } from '../../shared/img'
+import List from '../UI/List/List'
 
 interface HeaderProps {}
 
 const Header: FC<HeaderProps> = props => {
+	const navListItems = [
+		'Акций',
+		'Кредит',
+		'Оплата и Доставка',
+		'Помощь',
+		'Скупка Б/У',
+		'Контакты',
+	]
 	const [width, setWidth] = useState(window.innerWidth)
 
 	const resizeHandler = useCallback((e: Event) => {
@@ -29,46 +39,27 @@ const Header: FC<HeaderProps> = props => {
 						<div className={styles.menuBurger}>
 							<span></span>
 						</div>
-						<ul className={styles.navList}>
-							<li>Акций</li>
-							<li>Кредит</li>
-							<li>Оплата и Доставка</li>
-							<li>Помощь</li>
-							<li>Скупка Б/У</li>
-							<li>Контакты</li>
-						</ul>
-						<img
-							className={styles.logoWhite}
-							src='/img/icon/header/logo2.svg'
-							alt=''
+						<List
+							items={navListItems}
+							renderItem={(item: string, index) => <li key={index}>{item}</li>}
+							className={styles.navList}
 						/>
-						<img
-							className={styles.auth}
-							src='/img/icon/header/user.svg'
-							alt=''
-						/>
-						<img
-							className={styles.phone}
-							src='/img/icon/header/phone.svg'
-							alt=''
-						/>
+						<img className={styles.logoWhite} src={headerImage.Logo2} alt='' />
+						<img className={styles.auth} src={headerImage.user} alt='' />
+						<img className={styles.phone} src={headerImage.phone} alt='' />
 					</div>
 				</div>
 			</nav>
 			<nav className={styles.navbarTwo}>
 				<div className='container'>
 					<div className={styles.navbarTwoContent}>
-						<img
-							className={styles.logo}
-							src='/img/icon/header/logo.svg'
-							alt=''
-						/>
-						<Link to='/comp/catalog'>
+						<img className={styles.logo} src={headerImage.Logo} alt='' />
+						<Link to='/react-comp/catalog'>
 							<button className={styles.greenButton}>
 								Каталог товаров
 								<img
 									className={styles.greenButtonIcon}
-									src='/img/icon/header/catalog.svg'
+									src={headerImage.catalog}
 									alt=''
 								/>
 							</button>
@@ -81,22 +72,22 @@ const Header: FC<HeaderProps> = props => {
 								placeholder='Поиск'
 							/>
 							<label htmlFor='search' className={styles.searchBlockIcon}>
-								<img src='/img/icon/header/search.svg' alt='' />
+								<img src={headerImage.search} alt='' />
 							</label>
 						</div>
 						<img
 							className={styles.searchIcon}
-							src='/img/icon/header/search-mobile.svg'
+							src={headerImage.searchMobile}
 							alt=''
 						/>
 						<div className={styles.contact}>050 065 87 96</div>
 						<div className={styles.iconList}>
-							<img alt='' src='/img/icon/header/scales.svg' />
-							<img alt='' src='/img/icon/header/heart.svg' />
-							<img alt='' src='/img/icon/header/cart.svg' />
+							<img alt='' src={headerImage.scales} />
+							<img alt='' src={headerImage.heart} />
+							<img alt='' src={headerImage.cart} />
 						</div>
 						<div className={styles.iconListWhite}>
-							<img alt='' src='/img/icon/header/cart-white.svg' />
+							<img alt='' src={headerImage.cartWhite} />
 						</div>
 					</div>
 				</div>
