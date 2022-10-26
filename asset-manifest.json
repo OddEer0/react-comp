@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-comp/static/css/main.c5c1d3ff.css",
-    "main.js": "/react-comp/static/js/main.6e701933.js",
+    "main.css": "/react-comp/static/css/main.0c2d90f3.css",
+    "main.js": "/react-comp/static/js/main.c7c2739e.js",
     "static/media/4.jpg": "/react-comp/static/media/4.8bff2d0746714f2134d0.jpg",
     "static/media/3.jpg": "/react-comp/static/media/3.cd5e56ba7d6a450d8c29.jpg",
     "static/media/2.jpg": "/react-comp/static/media/2.a32cfabaea0ee9dbad57.jpg",
@@ -31,11 +31,11 @@
     "static/media/search.svg": "/react-comp/static/media/search.aa681223b9c43992ed839a8888ef4c5b.svg",
     "static/media/search-mobile.svg": "/react-comp/static/media/search-mobile.2c7853f456fec55075afeb64928f0b62.svg",
     "static/media/arrow.svg": "/react-comp/static/media/arrow.09acdce7488a8a2cf3d4c677e1b5b8a3.svg",
-    "main.c5c1d3ff.css.map": "/react-comp/static/css/main.c5c1d3ff.css.map",
-    "main.6e701933.js.map": "/react-comp/static/js/main.6e701933.js.map"
+    "main.0c2d90f3.css.map": "/react-comp/static/css/main.0c2d90f3.css.map",
+    "main.c7c2739e.js.map": "/react-comp/static/js/main.c7c2739e.js.map"
   },
   "entrypoints": [
-    "static/css/main.c5c1d3ff.css",
-    "static/js/main.6e701933.js"
+    "static/css/main.0c2d90f3.css",
+    "static/js/main.c7c2739e.js"
   ]
 }
