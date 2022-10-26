@@ -1,13 +1,20 @@
 import React, { FC, useState } from 'react'
-import { ISidebarItem } from '../../types/ISidebarMenu'
+import { ICategory } from '../../types/ICategory'
+import SidebarSkeleton from '../Skeletons/SidebarSkeleton'
 import SidebarItem from './SidebarItem'
 import styles from './SidebarMenu.module.scss'
 
 interface SidebarMenuProps {
-	items: ISidebarItem[]
+	items: ICategory[]
+	isLoading?: boolean
+	error?: null | string
 }
 
-const SidebarMenu: FC<SidebarMenuProps> = ({ items }) => {
+const SidebarMenu: FC<SidebarMenuProps> = ({
+	items,
+	isLoading = false,
+	error = null,
+}) => {
 	const [showModal, setShowModal] = useState<boolean>(false)
 	const [currentActive, setCurrentActive] = useState<number>(0)
 
@@ -30,16 +37,20 @@ const SidebarMenu: FC<SidebarMenuProps> = ({ items }) => {
 				className={`${styles.overlay} ${showModal && styles.modalActive}`}
 			></div>
 			<aside className={styles.sidebar}>
-				{items.map(item => (
-					<SidebarItem
-						key={item.id}
-						item={item}
-						onClick={clickHandler}
-						className={`${styles.sidebarItem} ${
-							item.id === currentActive && styles.itemActive
-						}`}
-					/>
-				))}
+				{isLoading
+					? [...Array(11)].map((_, index) => <SidebarSkeleton key={index} />)
+					: error
+					? [...Array(11)].map((_, index) => <h3 key={index}>{error}</h3>)
+					: items.map(item => (
+							<SidebarItem
+								key={item.id}
+								item={item}
+								onClick={clickHandler}
+								className={`${styles.sidebarItem} ${
+									item.id === currentActive && styles.itemActive
+								}`}
+							/>
+					  ))}
 				<div
 					className={`${styles.sidebarModal} ${
 						showModal && styles.modalActive

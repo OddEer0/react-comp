@@ -1,10 +1,10 @@
 import React, { FC } from 'react'
-import { ISidebarItem } from '../../types/ISidebarMenu'
 import styles from './SidebarMenu.module.scss'
-import { specialIcon, categoryImage } from '../../shared/img/index'
+import { specialIcon, categoryImage } from '../../assets/img/index'
+import { ICategory } from '../../types/ICategory'
 
 interface SidebarItemProps {
-	item: ISidebarItem
+	item: ICategory
 	onClick: (id: number) => void
 	className?: string
 }

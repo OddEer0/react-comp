@@ -1,13 +1,18 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import PageLayout from './components/PageLayout'
+import { useAppDispatch } from './hooks/redux'
 import CatalogPage from './pages/Catalogpage/Catalogpage'
 import DevicePage from './pages/Devicepage/Devicepage'
 import HomePage from './pages/Homepage/Homepage'
+import { fetchCategory } from './store/actionCreator/categoryAction'
 
 function App() {
+	const dispatch = useAppDispatch()
+	dispatch(fetchCategory())
+
 	return (
-		<div>
+		<div className='wrapper'>
 			<Routes>
 				<Route path='/react-comp/' element={<PageLayout />}>
 					<Route index element={<HomePage />} />

@@ -1,0 +1,15 @@
+.blueButton {
+	background: #01579b;
+	border-radius: 4px;
+	padding: 6px 16px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+
+	&:hover {
+		background: #014e89;
+		color: rgb(236, 236, 236);
+	}
+}

@@ -5,13 +5,13 @@ import { fetchDevice } from '../actionCreator/deviceAction'
 interface DeviceState {
 	deviceItem: IDevice[]
 	isLoading: boolean
-	error: string
+	error: string | null
 }
 
 const initialState: DeviceState = {
 	deviceItem: [],
 	isLoading: false,
-	error: '',
+	error: null,
 }
 
 const deviceSlice = createSlice({
@@ -21,7 +21,7 @@ const deviceSlice = createSlice({
 	extraReducers(builder) {
 		builder
 			.addCase(fetchDevice.pending, state => {
-				state.error = ''
+				state.error = null
 				state.isLoading = true
 			})
 			.addCase(fetchDevice.fulfilled, (state, action) => {
