@@ -1,4 +1,5 @@
-import React from 'react'
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import PageLayout from './components/PageLayout'
 import { useAppDispatch } from './hooks/redux'
@@ -9,7 +10,10 @@ import { fetchCategory } from './store/actionCreator/categoryAction'
 
 function App() {
 	const dispatch = useAppDispatch()
-	dispatch(fetchCategory())
+
+	useEffect(() => {
+		dispatch(fetchCategory())
+	}, [])
 
 	return (
 		<div className='wrapper'>

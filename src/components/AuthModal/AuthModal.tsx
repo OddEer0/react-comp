@@ -1,9 +1,11 @@
 import axios from 'axios'
 import React, { FC, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useAppDispatch } from '../../hooks/redux'
 import { setUser } from '../../store/slices/userSlice'
 import { IUser } from '../../types/IUser'
 import BlueButton from '../UI/BlueButton/BlueButton'
+import Loading from '../UI/Loading/Loading'
 import MyModal from '../UI/MyModal/MyModal'
 import RedButton from '../UI/RedButton/RedButton'
 import styles from './AuthModal.module.scss'
@@ -17,17 +19,18 @@ const AuthModal: FC<AuthModalProps> = ({ show, setShow }) => {
 	const [nameValue, setNameValue] = useState('')
 	const [passwordValue, setPasswordValue] = useState('')
 	const [isValid, setIsValid] = useState(true)
+	const [isFetch, setIsFetch] = useState(false)
 	const dispatch = useAppDispatch()
 
-	const fetchUser = async (email: string) => {
+	const fetchUser = async (email: string, password: string) => {
 		try {
 			const response = await axios.get<IUser[]>(
 				`https://632feb2ef5fda801f8d8053d.mockapi.io/user?email=${email}`
 			)
 			const [data] = await response.data
 
-			if (data.email === nameValue) {
-				if (data.password === passwordValue) {
+			if (data.email === email) {
+				if (data.password === password) {
 					dispatch(setUser(data))
 					setShow(false)
 				} else {
@@ -36,19 +39,40 @@ const AuthModal: FC<AuthModalProps> = ({ show, setShow }) => {
 			} else setIsValid(false)
 		} catch (e) {
 			setIsValid(false)
+		} finally {
+			setIsFetch(false)
+		}
+	}
+
+	const closeHandler = () => {
+		if (!isFetch) {
+			setShow(false)
+			setTimeout(() => {
+				setIsValid(true)
+				setNameValue('')
+				setPasswordValue('')
+			}, 300)
 		}
 	}
 
 	const submitHandler = (e: React.FormEvent) => {
 		e.preventDefault()
-		const isAuth = fetchUser(nameValue)
+		setIsFetch(true)
+		fetchUser(nameValue, passwordValue)
 	}
 
 	return (
-		<MyModal show={show} setShow={setShow} subClass={styles.modal}>
+		<MyModal show={show} setShow={closeHandler} subClass={styles.modal}>
+			{isFetch ? (
+				<div className={styles.modalOverlay}>
+					<Loading />
+				</div>
+			) : (
+				''
+			)}
 			<div className={styles.header}>
 				<h2>Вход</h2>
-				<button onClick={_ => setShow(false)}> &#10006;</button>
+				<button onClick={closeHandler}> &#10006;</button>
 			</div>
 			<form onSubmit={submitHandler} className={styles.body}>
 				<input
@@ -66,7 +90,7 @@ const AuthModal: FC<AuthModalProps> = ({ show, setShow }) => {
 					type='password'
 				/>
 				<div className={styles.link}>
-					<a>Забыли пароль?</a>
+					<Link to='/react-comp'>Забыли пароль?</Link>
 				</div>
 				<BlueButton style={{ width: '100%', height: '36px' }}>Вход</BlueButton>
 				<div className={styles.line}>
@@ -87,8 +111,15 @@ const AuthModal: FC<AuthModalProps> = ({ show, setShow }) => {
 			</form>
 			<div className={styles.footer}>
 				<h4>Нет аккаунта?</h4>
-				<a>Зарегистрироваться</a>
+				<div className={styles.link}>
+					<Link to='/react-comp'>Зарегистрироваться</Link>
+				</div>
 			</div>
+			{isValid ? (
+				''
+			) : (
+				<h5 className={styles.error}>Неверный логин или пароль</h5>
+			)}
 		</MyModal>
 	)
 }

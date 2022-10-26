@@ -6,4 +6,5 @@ export interface IUser {
 	password: string | null
 	name: string | null
 	role: RoleType
+	img: string | null
 }

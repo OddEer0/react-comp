@@ -7,6 +7,7 @@ const initialState: IUser = {
 	password: null,
 	name: null,
 	role: 'anonym',
+	img: null,
 }
 
 const userSlice = createSlice({

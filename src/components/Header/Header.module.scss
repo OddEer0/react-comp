@@ -220,6 +220,13 @@
 	}
 }
 
+.userAvatar {
+	cursor: pointer;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+}
+
 @media screen and (max-width: 570px) {
 	.searchBlock {
 		display: none;

@@ -9,7 +9,7 @@ interface HeaderFirstNavProps {}
 
 const HeaderFirstNav: FC<HeaderFirstNavProps> = props => {
 	const [showAuthModal, setShowAuthModal] = useState(false)
-	const { role } = useAppSelector(state => state.user)
+	const { role, img } = useAppSelector(state => state.user)
 	const navListItems = [
 		'Акций',
 		'Кредит',
@@ -40,7 +40,7 @@ const HeaderFirstNav: FC<HeaderFirstNavProps> = props => {
 							alt=''
 						/>
 					) : (
-						<h1>Register</h1>
+						<img className={styles.userAvatar} src={img ? img : ''} alt='' />
 					)}
 					<img className={styles.phone} src={headerImage.phone} alt='' />
 				</div>
