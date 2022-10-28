@@ -1,12 +1,15 @@
 {
   "files": {
-    "main.css": "/react-comp/static/css/main.26ff0fa8.css",
-    "main.js": "/react-comp/static/js/main.3a642ce0.js",
+    "main.css": "/react-comp/static/css/main.855441ad.css",
+    "main.js": "/react-comp/static/js/main.703f36f1.js",
     "static/media/4.jpg": "/react-comp/static/media/4.8bff2d0746714f2134d0.jpg",
     "static/media/3.jpg": "/react-comp/static/media/3.cd5e56ba7d6a450d8c29.jpg",
     "static/media/2.jpg": "/react-comp/static/media/2.a32cfabaea0ee9dbad57.jpg",
     "static/media/5.jpg": "/react-comp/static/media/5.5cad57a18080e6b83d79.jpg",
     "static/media/1.jpg": "/react-comp/static/media/1.5f6c65e3083f55e993de.jpg",
+    "static/media/viber.svg": "/react-comp/static/media/viber.c030d2f50dea9b5ba55eaf379b519fd5.svg",
+    "static/media/telegram.svg": "/react-comp/static/media/telegram.7087b2db878d59a2881101b10b4310c3.svg",
+    "static/media/Instagram.svg": "/react-comp/static/media/Instagram.d755f608f8aa44e6708a6b00306a68db.svg",
     "static/media/Logo.svg": "/react-comp/static/media/Logo.75dfd4f88940d6de141b7751633147a6.svg",
     "static/media/Logo2.svg": "/react-comp/static/media/Logo2.b4704c294eecc5f57fc9e28933833a36.svg",
     "static/media/5.svg": "/react-comp/static/media/5.bb0b21ac1cf3a5669b8f53455f0686a5.svg",
@@ -23,6 +26,8 @@
     "static/media/cart.svg": "/react-comp/static/media/cart.d82183e9159d564645f35decbb75fbea.svg",
     "static/media/cart-white.svg": "/react-comp/static/media/cart-white.62dcd8b33406b8a1eac67507ce46ffe1.svg",
     "static/media/scales.svg": "/react-comp/static/media/scales.3ba683d74c067a25c859163424921c75.svg",
+    "static/media/linkledin.svg": "/react-comp/static/media/linkledin.0a9459a05a3d27b16b9b9060af565d45.svg",
+    "static/media/youtube.svg": "/react-comp/static/media/youtube.559ea8112b8609a61b32c9115a603afb.svg",
     "static/media/2.svg": "/react-comp/static/media/2.93f432454a37b4724cf749412b8e49ef.svg",
     "index.html": "/react-comp/index.html",
     "static/media/user.svg": "/react-comp/static/media/user.64d8720eaee840917674599225f560b3.svg",
@@ -30,12 +35,14 @@
     "static/media/11.svg": "/react-comp/static/media/11.f4094f5eaa1441a294bf4b576bbb2bdc.svg",
     "static/media/search.svg": "/react-comp/static/media/search.aa681223b9c43992ed839a8888ef4c5b.svg",
     "static/media/search-mobile.svg": "/react-comp/static/media/search-mobile.2c7853f456fec55075afeb64928f0b62.svg",
+    "static/media/facebook.svg": "/react-comp/static/media/facebook.c1ebfab4159bdf850de0715fb9720f1d.svg",
     "static/media/arrow.svg": "/react-comp/static/media/arrow.09acdce7488a8a2cf3d4c677e1b5b8a3.svg",
-    "main.26ff0fa8.css.map": "/react-comp/static/css/main.26ff0fa8.css.map",
-    "main.3a642ce0.js.map": "/react-comp/static/js/main.3a642ce0.js.map"
+    "static/media/arrowWhite.svg": "/react-comp/static/media/arrowWhite.52cecd5e492de8a42f82b4d0fd815573.svg",
+    "main.855441ad.css.map": "/react-comp/static/css/main.855441ad.css.map",
+    "main.703f36f1.js.map": "/react-comp/static/js/main.703f36f1.js.map"
   },
   "entrypoints": [
-    "static/css/main.26ff0fa8.css",
-    "static/js/main.3a642ce0.js"
+    "static/css/main.855441ad.css",
+    "static/js/main.703f36f1.js"
   ]
 }
