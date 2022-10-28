@@ -3,14 +3,14 @@ import styles from './GreenButton.module.scss'
 
 interface GreenButtonProps {
 	title: string
-	src: string
+	src?: string
 }
 
 const GreenButton: FC<GreenButtonProps> = ({ title, src }) => {
 	return (
 		<button className={styles.greenButton}>
 			{title}
-			<img src={src} alt='' />
+			{src ? <img src={src} alt='' /> : ''}
 		</button>
 	)
 }

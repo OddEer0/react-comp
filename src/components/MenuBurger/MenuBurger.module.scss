@@ -1,0 +1,46 @@
+.menuBurger {
+	padding: 18px 16px;
+	max-width: 424px;
+	width: 100%;
+	min-width: 274px;
+	height: 100vh;
+	background-color: #060f42;
+	position: fixed;
+	top: 0;
+	left: 0;
+	transform: translateX(-100%);
+	transition: transform 0.3s ease-in-out;
+	z-index: 1100;
+}
+
+.menuActive {
+	transform: translateX(0);
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.452);
+	z-index: 1000;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.overlayActive {
+	visibility: visible;
+	opacity: 1;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+
+	button {
+		font-size: 22px;
+		color: white;
+	}
+}

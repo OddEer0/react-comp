@@ -5,6 +5,7 @@ export interface IDeviceOption {
 export interface IDevice {
 	id: number
 	category: number
+	subCategory: number
 	name: string
 	price: number
 	stock: number

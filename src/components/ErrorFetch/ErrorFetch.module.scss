@@ -1,0 +1,22 @@
+.errorBlock {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	h1 {
+		font-size: 48px;
+		margin-top: 15px;
+	}
+
+	span {
+		font-size: 148px;
+	}
+
+	p {
+		margin-top: 25px;
+		font-size: 38px;
+	}
+}

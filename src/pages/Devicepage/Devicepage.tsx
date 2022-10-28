@@ -1,8 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { FC, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import DeviceCard from '../../components/UI/DeviceCard/DeviceCard'
 import { useAppDispatch, useAppSelector } from '../../hooks/redux'
 import { fetchDevice } from '../../store/actionCreator/deviceAction'
+import styles from './Devicepage.module.scss'
 
 interface DevicePageProps {}
 
@@ -12,7 +14,11 @@ const DevicePage: FC<DevicePageProps> = props => {
 	const { deviceItem, error, isLoading } = useAppSelector(state => state.device)
 
 	useEffect(() => {
-		dispatch(fetchDevice({ category: Number(categoryID) }))
+		dispatch(
+			fetchDevice({
+				category: Number(categoryID),
+			})
+		)
 	}, [])
 
 	console.log('ds')
@@ -23,9 +29,11 @@ const DevicePage: FC<DevicePageProps> = props => {
 
 	return (
 		<div className='container'>
-			{deviceItem.length
-				? deviceItem.map(item => <h1 key={item.id}>{item.name}</h1>)
-				: 'Not Device'}
+			<div className={styles.content}>
+				{deviceItem.length
+					? deviceItem.map(item => <DeviceCard key={item.id} item={item} />)
+					: 'Not Device'}
+			</div>
 		</div>
 	)
 }

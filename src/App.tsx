@@ -22,7 +22,6 @@ function App() {
 					<Route index element={<HomePage />} />
 					<Route path='catalog' element={<CatalogPage />} />
 					<Route path='catalog/:category' element={<DevicePage />} />
-					<Route path='catalog/:category/:id' element={<DevicePage />} />
 				</Route>
 			</Routes>
 		</div>

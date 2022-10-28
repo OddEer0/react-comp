@@ -72,7 +72,7 @@ const AuthModal: FC<AuthModalProps> = ({ show, setShow }) => {
 			)}
 			<div className={styles.header}>
 				<h2>Вход</h2>
-				<button onClick={closeHandler}> &#10006;</button>
+				<button onClick={closeHandler}>&#10006;</button>
 			</div>
 			<form onSubmit={submitHandler} className={styles.body}>
 				<input

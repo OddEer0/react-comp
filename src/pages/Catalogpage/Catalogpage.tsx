@@ -1,9 +1,11 @@
 import React, { FC } from 'react'
-import { Link } from 'react-router-dom'
-import CategoryCard from '../../components/UI/CategoryCard/CategoryCard'
 import styles from './Catalogpage.module.scss'
-import { categoryImage } from '../../assets/img/index'
 import { useAppSelector } from '../../hooks/redux'
+import CategoryCard from '../../components/UI/CategoryCard/CategoryCard'
+import { categoryImage } from '../../assets/img'
+import { Link } from 'react-router-dom'
+import ErrorFetch from '../../components/ErrorFetch/ErrorFetch'
+import CategorySkeleton from '../../components/Skeletons/CategorySkeletons'
 
 interface CatalogPageProps {}
 
@@ -15,22 +17,23 @@ const CatalogPage: FC<CatalogPageProps> = props => {
 	return (
 		<div className='container'>
 			<div className={styles.categoryBlock}>
-				{error ? (
-					<div className={styles.errorBlock}>
-						<span>&#129402;</span>
-						<h1>{error}</h1>
-						<p>Попробуйте перезагрузить страницу</p>
-					</div>
-				) : (
-					categoryItem.map(item => (
-						<Link key={item.id} to={`${item.id}`}>
-							<CategoryCard
-								category={item.id}
-								title={item.title}
-								icon={categoryImage[item.id - 1]}
-							/>
-						</Link>
+				{isLoading ? (
+					[...new Array(12)].map((_, index) => (
+						<CategorySkeleton key={index} className={styles.categorySkeleton} />
 					))
+				) : error ? (
+					<ErrorFetch error={error} title='Попробуйте перезагрузить страницу' />
+				) : (
+					<>
+						{categoryItem.map(item => (
+							<Link key={item.id} to={`${item.id}`}>
+								<CategoryCard
+									icon={categoryImage[item.id - 1]}
+									title={item.title}
+								/>
+							</Link>
+						))}
+					</>
 				)}
 			</div>
 		</div>

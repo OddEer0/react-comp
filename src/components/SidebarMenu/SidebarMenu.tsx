@@ -1,6 +1,11 @@
-import React, { FC, useState } from 'react'
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { FC, useEffect, useState } from 'react'
+import { useAppDispatch, useAppSelector } from '../../hooks/redux'
+import { fetchDevice } from '../../store/actionCreator/deviceAction'
 import { ICategory } from '../../types/ICategory'
+import ErrorFetch from '../ErrorFetch/ErrorFetch'
 import SidebarSkeleton from '../Skeletons/SidebarSkeleton'
+import SidebarContent from './SidebarContent'
 import SidebarItem from './SidebarItem'
 import styles from './SidebarMenu.module.scss'
 
@@ -17,12 +22,24 @@ const SidebarMenu: FC<SidebarMenuProps> = ({
 }) => {
 	const [showModal, setShowModal] = useState<boolean>(false)
 	const [currentActive, setCurrentActive] = useState<number>(0)
+	const {
+		deviceItem,
+		error: errorContent,
+		isLoading: isLoadingContent,
+	} = useAppSelector(state => state.device)
+	const dispatch = useAppDispatch()
 
 	const clickHandler = (id: number): void => {
 		setShowModal(true)
 		setCurrentActive(id)
 		document.body.classList.add('no-scroll-2')
 	}
+
+	useEffect(() => {
+		if (currentActive) {
+			dispatch(fetchDevice({ category: currentActive }))
+		}
+	}, [currentActive])
 
 	const hideHandler = (): void => {
 		setShowModal(false)
@@ -37,26 +54,34 @@ const SidebarMenu: FC<SidebarMenuProps> = ({
 				className={`${styles.overlay} ${showModal && styles.modalActive}`}
 			></div>
 			<aside className={styles.sidebar}>
-				{isLoading
-					? [...Array(11)].map((_, index) => <SidebarSkeleton key={index} />)
-					: error
-					? [...Array(11)].map((_, index) => <h3 key={index}>{error}</h3>)
-					: items.map(item => (
-							<SidebarItem
-								key={item.id}
-								item={item}
-								onClick={clickHandler}
-								className={`${styles.sidebarItem} ${
-									item.id === currentActive && styles.itemActive
-								}`}
-							/>
-					  ))}
+				{isLoading ? (
+					[...Array(11)].map((_, index) => <SidebarSkeleton key={index} />)
+				) : error ? (
+					<ErrorFetch error={error} />
+				) : (
+					items.map(item => (
+						<SidebarItem
+							key={item.id}
+							item={item}
+							onClick={clickHandler}
+							className={`${styles.sidebarItem} ${
+								item.id === currentActive && styles.itemActive
+							}`}
+						/>
+					))
+				)}
 				<div
 					className={`${styles.sidebarModal} ${
 						showModal && styles.modalActive
 					}`}
 				>
-					<div className={styles.content}></div>
+					<SidebarContent
+						className={styles.content}
+						items={deviceItem}
+						error={errorContent}
+						isLoading={isLoadingContent}
+						closeHandler={hideHandler}
+					/>
 				</div>
 			</aside>
 		</>

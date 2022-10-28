@@ -17,7 +17,11 @@ const initialState: DeviceState = {
 const deviceSlice = createSlice({
 	name: 'device',
 	initialState,
-	reducers: {},
+	reducers: {
+		removeDevice(state) {
+			return (state = initialState)
+		},
+	},
 	extraReducers(builder) {
 		builder
 			.addCase(fetchDevice.pending, state => {
@@ -38,4 +42,5 @@ const deviceSlice = createSlice({
 	},
 })
 
+export const { removeDevice } = deviceSlice.actions
 export default deviceSlice.reducer
