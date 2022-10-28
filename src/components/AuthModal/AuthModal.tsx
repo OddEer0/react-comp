@@ -12,7 +12,7 @@ import styles from './AuthModal.module.scss'
 
 interface AuthModalProps {
 	show: boolean
-	setShow: (show: boolean) => void
+	setShow: () => void
 }
 
 const AuthModal: FC<AuthModalProps> = ({ show, setShow }) => {
@@ -32,7 +32,7 @@ const AuthModal: FC<AuthModalProps> = ({ show, setShow }) => {
 			if (data.email === email) {
 				if (data.password === password) {
 					dispatch(setUser(data))
-					setShow(false)
+					setShow()
 				} else {
 					setIsValid(false)
 				}
@@ -46,7 +46,7 @@ const AuthModal: FC<AuthModalProps> = ({ show, setShow }) => {
 
 	const closeHandler = () => {
 		if (!isFetch) {
-			setShow(false)
+			setShow()
 			setTimeout(() => {
 				setIsValid(true)
 				setNameValue('')

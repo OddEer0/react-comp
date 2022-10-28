@@ -28,11 +28,29 @@ import category9 from './icon/sidebar/9.svg'
 import category10 from './icon/sidebar/10.svg'
 import category11 from './icon/sidebar/11.svg'
 
+import instagram from './icon/social/Instagram.svg'
+import facebook from './icon/social/facebook.svg'
+import telegram from './icon/social/telegram.svg'
+import viber from './icon/social/viber.svg'
+import youtube from './icon/social/youtube.svg'
+import linkledin from './icon/social/linkledin.svg'
+
 import arrow from './icon/arrow.svg'
+import arrowWhite from './icon/arrowWhite.svg'
 
 export const specialIcon = {
 	arrow,
+	arrowWhite,
 }
+
+export const socialImage = [
+	instagram,
+	facebook,
+	viber,
+	telegram,
+	youtube,
+	linkledin,
+]
 
 export const headerImage = {
 	cartWhite,

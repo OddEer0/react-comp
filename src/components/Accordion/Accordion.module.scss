@@ -1,0 +1,45 @@
+.accordion {
+	margin-top: 40px;
+	width: 100%;
+}
+
+.accordionItemBlock {
+	overflow: hidden;
+	transition: height 0.3s ease-in-out;
+	.accordionItem {
+		width: 100%;
+		height: 50px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		font-size: 18px;
+		color: white;
+		transition: opacity 0.3s ease-in-out;
+		position: relative;
+
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+}
+
+.accordionSubItemBlock {
+	display: flex;
+	flex-direction: column;
+	.accordionSubItem {
+		font-size: 14px;
+		margin-top: 16px;
+		margin-left: 5px;
+		transition: opacity 0.3s ease-in-out;
+
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+}
+
+.arrowWhite {
+	position: absolute;
+	right: 10px;
+	transition: transform 0.3s ease-in-out;
+}

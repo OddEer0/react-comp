@@ -21,14 +21,31 @@ const HeaderFirstNav: FC<HeaderFirstNavProps> = props => {
 		'Контакты',
 	]
 
+	const toggleAuth = () => {
+		if (showAuthModal) {
+			setShowAuthModal(false)
+			document.body.classList.remove('no-scroll-1')
+		} else {
+			setShowAuthModal(true)
+			document.body.classList.add('no-scroll-1')
+		}
+	}
+
+	const toggleMenuBurger = () => {
+		if (showMenuBurger) {
+			setShowMenuBurger(false)
+			document.body.classList.remove('no-scroll-1')
+		} else {
+			setShowMenuBurger(true)
+			document.body.classList.add('no-scroll-1')
+		}
+	}
+
 	return (
 		<nav className={styles.navbarOne}>
 			<div className='container'>
 				<div className={styles.navbarOneContent}>
-					<div
-						className={styles.menuBurger}
-						onClick={_ => setShowMenuBurger(true)}
-					>
+					<div className={styles.menuBurger} onClick={toggleMenuBurger}>
 						<span></span>
 					</div>
 					<List
@@ -39,7 +56,7 @@ const HeaderFirstNav: FC<HeaderFirstNavProps> = props => {
 					<img className={styles.logoWhite} src={headerImage.Logo2} alt='' />
 					{role === 'anonym' ? (
 						<img
-							onClick={_ => setShowAuthModal(true)}
+							onClick={toggleAuth}
 							className={styles.auth}
 							src={headerImage.user}
 							alt=''
@@ -55,8 +72,8 @@ const HeaderFirstNav: FC<HeaderFirstNavProps> = props => {
 					<img className={styles.phone} src={headerImage.phone} alt='' />
 				</div>
 			</div>
-			<AuthModal show={showAuthModal} setShow={setShowAuthModal} />
-			<MenuBurger show={showMenuBurger} setShow={setShowMenuBurger} />
+			<AuthModal show={showAuthModal} setShow={toggleAuth} />
+			<MenuBurger show={showMenuBurger} setShow={toggleMenuBurger} />
 		</nav>
 	)
 }
