@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-comp/static/css/main.855441ad.css",
-    "main.js": "/react-comp/static/js/main.703f36f1.js",
+    "main.css": "/react-comp/static/css/main.fb72d2ee.css",
+    "main.js": "/react-comp/static/js/main.d435a347.js",
     "static/media/4.jpg": "/react-comp/static/media/4.8bff2d0746714f2134d0.jpg",
     "static/media/3.jpg": "/react-comp/static/media/3.cd5e56ba7d6a450d8c29.jpg",
     "static/media/2.jpg": "/react-comp/static/media/2.a32cfabaea0ee9dbad57.jpg",
@@ -20,6 +20,7 @@
     "static/media/10.svg": "/react-comp/static/media/10.165fdd9156a098b43f5cb10d639286e7.svg",
     "static/media/catalog.svg": "/react-comp/static/media/catalog.534c433aff854421326f9e583ac120e4.svg",
     "static/media/heart.svg": "/react-comp/static/media/heart.bb91dca813dc622a535e726414c48fa0.svg",
+    "static/media/delete.svg": "/react-comp/static/media/delete.f407b091229b94320502b2180d914560.svg",
     "static/media/8.svg": "/react-comp/static/media/8.460fe41b672b0c3ad503189e2993abff.svg",
     "static/media/6.svg": "/react-comp/static/media/6.edaac53658190fc59e185d4d56b7a754.svg",
     "static/media/4.svg": "/react-comp/static/media/4.eac6222a7a3da0585b4567eafb611aa3.svg",
@@ -38,11 +39,11 @@
     "static/media/facebook.svg": "/react-comp/static/media/facebook.c1ebfab4159bdf850de0715fb9720f1d.svg",
     "static/media/arrow.svg": "/react-comp/static/media/arrow.09acdce7488a8a2cf3d4c677e1b5b8a3.svg",
     "static/media/arrowWhite.svg": "/react-comp/static/media/arrowWhite.52cecd5e492de8a42f82b4d0fd815573.svg",
-    "main.855441ad.css.map": "/react-comp/static/css/main.855441ad.css.map",
-    "main.703f36f1.js.map": "/react-comp/static/js/main.703f36f1.js.map"
+    "main.fb72d2ee.css.map": "/react-comp/static/css/main.fb72d2ee.css.map",
+    "main.d435a347.js.map": "/react-comp/static/js/main.d435a347.js.map"
   },
   "entrypoints": [
-    "static/css/main.855441ad.css",
-    "static/js/main.703f36f1.js"
+    "static/css/main.fb72d2ee.css",
+    "static/js/main.d435a347.js"
   ]
 }
