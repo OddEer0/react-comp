@@ -1,5 +1,14 @@
 import { IAccordion } from '../types/IAccordion'
 
+export const navListItems = [
+	'Акций',
+	'Кредит',
+	'Оплата и Доставка',
+	'Помощь',
+	'Скупка Б/У',
+	'Контакты',
+]
+
 export const AccordionItem: IAccordion[] = [
 	{
 		id: 1,

@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { headerImage, socialImage } from '../../assets/img'
-import { AccordionItem, contactsData } from '../../data/menuBurgerData'
+import { AccordionItem, contactsData } from '../../utils/consts'
 import Accordion from '../Accordion/Accordion'
 import List from '../UI/List/List'
 import styles from './MenuBurger.module.scss'

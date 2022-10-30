@@ -6,6 +6,8 @@ import { useAppDispatch } from './hooks/redux'
 import CatalogPage from './pages/Catalogpage/Catalogpage'
 import DevicePage from './pages/Devicepage/Devicepage'
 import HomePage from './pages/Homepage/Homepage'
+import Profilepage from './pages/Profilepage/Profilepage'
+import RequireAuthProfilepage from './pages/Profilepage/RequireAuthProfilepage'
 import { fetchCategory } from './store/actionCreator/categoryAction'
 
 function App() {
@@ -22,6 +24,14 @@ function App() {
 					<Route index element={<HomePage />} />
 					<Route path='catalog' element={<CatalogPage />} />
 					<Route path='catalog/:category' element={<DevicePage />} />
+					<Route
+						path='profile'
+						element={
+							<RequireAuthProfilepage>
+								<Profilepage />
+							</RequireAuthProfilepage>
+						}
+					/>
 				</Route>
 			</Routes>
 		</div>

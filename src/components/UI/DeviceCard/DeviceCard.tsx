@@ -22,7 +22,6 @@ const DeviceCard: FC<DeviceCardProps> = React.memo(
 		const dispatch = useAppDispatch()
 		const { state: isFavorite, toggleHandler: favoriteHandler } = useToggle()
 		const { state: isScales, toggleHandler: scalesHandler } = useToggle()
-
 		const cartHandler = useCooldownHandler(() => {
 			if (isBasketItem) dispatch(removeBasketItem(item.id))
 			else dispatch(addBasketItem(item))

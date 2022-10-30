@@ -1,21 +1,14 @@
-import React, { FC, useRef, useState } from 'react'
+import React, { FC, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { specialIcon } from '../../assets/img'
+import { useToggle } from '../../hooks/useToggle'
 import { IAccordion } from '../../types/IAccordion'
 import styles from './Accordion.module.scss'
 
 const AccordionItem: FC<IAccordion> = ({ title, subItem }) => {
-	const [open, setOpen] = useState(false)
+	const { state: open, toggleHandler } = useToggle()
 	const itemRef = useRef<HTMLButtonElement | null>(null)
 	const subRef = useRef<HTMLDivElement | null>(null)
-
-	const toggleHandler = () => {
-		if (open) {
-			setOpen(false)
-		} else {
-			setOpen(true)
-		}
-	}
 
 	const fullHeight = () => {
 		let sum = 0

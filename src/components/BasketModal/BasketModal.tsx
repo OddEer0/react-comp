@@ -1,6 +1,5 @@
 import React, { FC, useState } from 'react'
 import { useAppSelector } from '../../hooks/redux'
-import { stockNumber } from '../../utils/stockNumber'
 import NotItems from '../NotItems/NotItems'
 import BlueNeonButton from '../UI/BlueNeonButton/BlueNeonButton'
 import GreenButton from '../UI/GreenButton/GreenButton'
