@@ -9,7 +9,7 @@ export const fetchDevice = createAsyncThunk<
 >('device/fetchDevice', async (param, thunkAPI) => {
 	try {
 		const response = await axios.get(
-			`https://632feb2ef5fda801f8d8053d.mockapi.io/device?category=${param.category}`
+			`https://632feb2ef5fda801f8d8053d.mockapi.io/device?category=${param.category}&limit=20`
 		)
 		return response.data
 	} catch (e) {

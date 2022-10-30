@@ -22,7 +22,10 @@ const MenuBurger: FC<MenuBurgerProps> = ({ show, setShow }) => {
 					<Accordion items={AccordionItem} />
 					<div className={styles.contacts}>
 						<h2>Контакты</h2>
-						<List items={contactsData} renderItem={item => <li>{item}</li>} />
+						<List
+							items={contactsData}
+							renderItem={(item, index) => <li key={index}>{item}</li>}
+						/>
 					</div>
 					<div className={styles.social}>
 						<h2>Следите за нами</h2>

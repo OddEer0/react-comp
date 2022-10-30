@@ -1,12 +1,27 @@
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { headerImage } from '../../assets/img'
+import { useAppSelector } from '../../hooks/redux'
+import BasketModal from '../BasketModal/BasketModal'
 import GreenButton from '../UI/GreenButton/GreenButton'
 import styles from './Header.module.scss'
 
 interface HeaderSecondNavProps {}
 
 const HeaderSecondNav: FC<HeaderSecondNavProps> = props => {
+	const [showBasket, setShowBasket] = useState(false)
+	const { basketItem } = useAppSelector(state => state.basket)
+
+	const toggleBasket = () => {
+		if (showBasket) {
+			setShowBasket(false)
+			document.body.classList.remove('no-scroll-1')
+		} else {
+			setShowBasket(true)
+			document.body.classList.add('no-scroll-1')
+		}
+	}
+
 	return (
 		<nav className={styles.navbarTwo}>
 			<div className='container'>
@@ -33,15 +48,25 @@ const HeaderSecondNav: FC<HeaderSecondNavProps> = props => {
 					/>
 					<div className={styles.contact}>050 065 87 96</div>
 					<div className={styles.iconList}>
-						<img alt='' src={headerImage.scales} />
-						<img alt='' src={headerImage.heart} />
-						<img alt='' src={headerImage.cart} />
+						<div className={styles.iconListItem}>
+							<img alt='' src={headerImage.scales} />
+							<sub>45</sub>
+						</div>
+						<div className={styles.iconListItem}>
+							<img alt='' src={headerImage.heart} />
+							<sub>45</sub>
+						</div>
+						<div onClick={toggleBasket} className={styles.iconListItem}>
+							<img alt='' src={headerImage.cart} />
+							{basketItem.length ? <sub>{basketItem.length}</sub> : ''}
+						</div>
 					</div>
 					<div className={styles.iconListWhite}>
-						<img alt='' src={headerImage.cartWhite} />
+						<img onClick={toggleBasket} alt='' src={headerImage.cartWhite} />
 					</div>
 				</div>
 			</div>
+			<BasketModal show={showBasket} setShow={toggleBasket} />
 		</nav>
 	)
 }

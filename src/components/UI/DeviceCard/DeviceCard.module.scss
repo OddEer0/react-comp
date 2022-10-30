@@ -18,17 +18,7 @@
 		height: 26px;
 		cursor: pointer;
 		border-radius: 7px;
-	}
-
-	button {
-		margin-left: 5px;
-		width: 24px;
-		height: 24px;
-		font-size: 24px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		color: rgb(193, 193, 193);
+		margin-right: 8px;
 	}
 }
 
@@ -78,4 +68,58 @@
 	color: #e93232;
 	margin-left: 10px;
 	margin-top: 5px;
+}
+
+.heart {
+	position: relative;
+	width: 26px;
+	height: 20px;
+	font-size: 24px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&::before,
+	&::after {
+		position: absolute;
+		content: '';
+		left: 13px;
+		top: 0;
+		width: 13px;
+		height: 19px;
+		background: #cccccc;
+		-moz-border-radius: 50px 50px 0 0;
+		border-radius: 50px 50px 0 0;
+		-webkit-transform: rotate(-45deg);
+		-moz-transform: rotate(-45deg);
+		-ms-transform: rotate(-45deg);
+		-o-transform: rotate(-45deg);
+		transform: rotate(-45deg);
+		-webkit-transform-origin: 0 100%;
+		-moz-transform-origin: 0 100%;
+		-ms-transform-origin: 0 100%;
+		-o-transform-origin: 0 100%;
+		transform-origin: 0 100%;
+	}
+
+	&::after {
+		left: 0;
+		-webkit-transform: rotate(45deg);
+		-moz-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		-o-transform: rotate(45deg);
+		transform: rotate(45deg);
+		-webkit-transform-origin: 100% 100%;
+		-moz-transform-origin: 100% 100%;
+		-ms-transform-origin: 100% 100%;
+		-o-transform-origin: 100% 100%;
+		transform-origin: 100% 100%;
+	}
+}
+
+.heartActive {
+	&::before,
+	&::after {
+		background: rgb(255, 58, 58);
+	}
 }

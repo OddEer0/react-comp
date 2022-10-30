@@ -91,12 +91,30 @@
 }
 
 .iconList {
+	display: flex;
 	margin-left: 5px;
-	img:not(:last-child) {
+
+	.iconListItem:not(:last-child) {
 		margin-right: 20px;
 	}
-	img {
+	.iconListItem {
 		cursor: pointer;
+		position: relative;
+
+		sub {
+			width: 23px;
+			height: 23px;
+			position: absolute;
+			top: -8px;
+			left: -8px;
+			background-color: #06a56c;
+			padding: 3px;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: white;
+		}
 	}
 }
 
