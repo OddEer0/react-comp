@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-comp/static/css/main.c1e4b0cc.css",
-    "main.js": "/react-comp/static/js/main.1a4e2f02.js",
+    "main.css": "/react-comp/static/css/main.74ff3ebb.css",
+    "main.js": "/react-comp/static/js/main.fb0fadea.js",
     "static/media/4.jpg": "/react-comp/static/media/4.8bff2d0746714f2134d0.jpg",
     "static/media/3.jpg": "/react-comp/static/media/3.cd5e56ba7d6a450d8c29.jpg",
     "static/media/2.jpg": "/react-comp/static/media/2.a32cfabaea0ee9dbad57.jpg",
@@ -39,11 +39,11 @@
     "static/media/facebook.svg": "/react-comp/static/media/facebook.c1ebfab4159bdf850de0715fb9720f1d.svg",
     "static/media/arrow.svg": "/react-comp/static/media/arrow.09acdce7488a8a2cf3d4c677e1b5b8a3.svg",
     "static/media/arrowWhite.svg": "/react-comp/static/media/arrowWhite.52cecd5e492de8a42f82b4d0fd815573.svg",
-    "main.c1e4b0cc.css.map": "/react-comp/static/css/main.c1e4b0cc.css.map",
-    "main.1a4e2f02.js.map": "/react-comp/static/js/main.1a4e2f02.js.map"
+    "main.74ff3ebb.css.map": "/react-comp/static/css/main.74ff3ebb.css.map",
+    "main.fb0fadea.js.map": "/react-comp/static/js/main.fb0fadea.js.map"
   },
   "entrypoints": [
-    "static/css/main.c1e4b0cc.css",
-    "static/js/main.1a4e2f02.js"
+    "static/css/main.74ff3ebb.css",
+    "static/js/main.fb0fadea.js"
   ]
 }
