@@ -11,25 +11,38 @@ import {
 import { stockNumber } from '../../../utils/stockNumber'
 import { useToggle } from '../../../hooks/useToggle'
 import { useCooldownHandler } from '../../../hooks/useCooldownHandler'
+import {
+	addFavoriteItem,
+	removeFavoriteItem,
+} from '../../../store/slices/favoriteSlice'
 
 interface DeviceCardProps {
 	item: IDevice
-	isBasketItem: boolean
+	isBasketItem?: boolean
+	isFavorite?: boolean
 }
 
 const DeviceCard: FC<DeviceCardProps> = React.memo(
-	({ item, isBasketItem = false }) => {
+	({ item, isBasketItem = false, isFavorite = false }) => {
 		const dispatch = useAppDispatch()
-		const { state: isFavorite, toggleHandler: favoriteHandler } = useToggle()
 		const { state: isScales, toggleHandler: scalesHandler } = useToggle()
 		const cartHandler = useCooldownHandler(() => {
 			if (isBasketItem) dispatch(removeBasketItem(item.id))
 			else dispatch(addBasketItem(item))
 		}, 300)
+		const heartHandler = useCooldownHandler(() => {
+			if (isFavorite) dispatch(removeFavoriteItem(item.id))
+			else dispatch(addFavoriteItem(item))
+		}, 300)
 
 		return (
 			<div className={styles.card}>
 				<div className={styles.header}>
+					{Date.now() / 1000 / 60 - item.date / 1000 / 60 < 4320 ? (
+						<div className={styles.new}>Новинка</div>
+					) : (
+						''
+					)}
 					<img
 						onClick={cartHandler}
 						style={{
@@ -50,7 +63,7 @@ const DeviceCard: FC<DeviceCardProps> = React.memo(
 								? [styles.heart, styles.heartActive].join(' ')
 								: styles.heart
 						}
-						onClick={_ => favoriteHandler()}
+						onClick={heartHandler}
 					></button>
 				</div>
 				<div className={styles.body}>

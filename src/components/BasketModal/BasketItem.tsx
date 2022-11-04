@@ -57,29 +57,33 @@ const BasketItem: FC<BasketItemProps> = ({ item, setTotalPrice, ...props }) => {
 	return (
 		<div {...props}>
 			<img className={styles.itemImage} src={item.img} alt='' />
-			<h2 className={styles.itemName}>{item.name}</h2>
-			<div className={styles.counter}>
-				<button onClick={minusHandler} className={styles.minus}>
-					<span></span>
-				</button>
-				<input
-					onChange={changeHandler}
-					value={count}
-					type='tel'
-					className={styles.count}
-				/>
-				<button onClick={plusHandler} className={styles.plus}>
-					<span></span>
-					<span></span>
-				</button>
+			<div className={styles.wrapper}>
+				<h2 className={styles.itemName}>{item.name}</h2>
+				<div className={styles.counter}>
+					<button onClick={minusHandler} className={styles.minus}>
+						<span></span>
+					</button>
+					<input
+						onChange={changeHandler}
+						value={count}
+						type='tel'
+						className={styles.count}
+					/>
+					<button onClick={plusHandler} className={styles.plus}>
+						<span></span>
+						<span></span>
+					</button>
+				</div>
 			</div>
-			<h2 className={styles.itemPrice}>{price} руб</h2>
-			<img
-				onClick={_ => removeHandler(item.id)}
-				className={styles.deleteIcon}
-				src={specialIcon.deleteIcon}
-				alt=''
-			/>
+			<div className={styles.wrapper2}>
+				<h2 className={styles.itemPrice}>{price} руб</h2>
+				<img
+					onClick={_ => removeHandler(item.id)}
+					className={styles.deleteIcon}
+					src={specialIcon.deleteIcon}
+					alt=''
+				/>
+			</div>
 		</div>
 	)
 }

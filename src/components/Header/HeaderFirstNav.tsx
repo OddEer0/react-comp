@@ -15,15 +15,15 @@ const HeaderFirstNav: FC<HeaderFirstNavProps> = props => {
 	const { role, img, name } = useAppSelector(state => state.user)
 	const { state: showAuthModal, toggleHandler: toggleAuth } = useToggle(
 		false,
+		400,
 		() => document.body.classList.add('no-scroll-1'),
-		() => document.body.classList.remove('no-scroll-1'),
-		400
+		() => document.body.classList.remove('no-scroll-1')
 	)
 	const { state: showMenuBurger, toggleHandler: toggleMenuBurger } = useToggle(
 		false,
+		400,
 		() => document.body.classList.add('no-scroll-1'),
-		() => document.body.classList.remove('no-scroll-1'),
-		400
+		() => document.body.classList.remove('no-scroll-1')
 	)
 
 	return (

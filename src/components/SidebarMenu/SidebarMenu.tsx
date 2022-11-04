@@ -20,8 +20,8 @@ const SidebarMenu: FC<SidebarMenuProps> = ({
 	isLoading = false,
 	error = null,
 }) => {
-	const [showModal, setShowModal] = useState<boolean>(false)
-	const [currentActive, setCurrentActive] = useState<number>(0)
+	const [showModal, setShowModal] = useState(false)
+	const [currentActive, setCurrentActive] = useState(0)
 	const {
 		deviceItem,
 		error: errorContent,
@@ -43,7 +43,6 @@ const SidebarMenu: FC<SidebarMenuProps> = ({
 
 	const hideHandler = (): void => {
 		setShowModal(false)
-		setCurrentActive(0)
 		document.body.classList.remove('no-scroll-2')
 	}
 

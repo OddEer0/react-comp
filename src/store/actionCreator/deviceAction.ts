@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
+import { apiService } from '../../services/api/api.service'
 import { IDevice, IDeviceOption } from '../../types/IDevice'
 
 export const fetchDevice = createAsyncThunk<
@@ -9,7 +10,7 @@ export const fetchDevice = createAsyncThunk<
 >('device/fetchDevice', async (param, thunkAPI) => {
 	try {
 		const response = await axios.get(
-			`https://632feb2ef5fda801f8d8053d.mockapi.io/device?category=${param.category}&limit=20`
+			apiService.getCategoryDevice(param.category, 20)
 		)
 		return response.data
 	} catch (e) {

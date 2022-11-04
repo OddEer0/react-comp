@@ -1,8 +1,12 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import { useNavigate } from 'react-router-dom'
+import AddDeviceModal from '../../components/AddDeviceModal/AddDeviceModal'
+import ConfirmModal from '../../components/ConfirmModal/ConfirmModal'
 import BlueButton from '../../components/UI/BlueButton/BlueButton'
 import RedButton from '../../components/UI/RedButton/RedButton'
 import { useAppDispatch, useAppSelector } from '../../hooks/redux'
+import { useConfirm } from '../../hooks/useConfirm'
+import { useToggle } from '../../hooks/useToggle'
 import { removeUser } from '../../store/slices/userSlice'
 import styles from './Profilepage.module.scss'
 
@@ -12,14 +16,19 @@ const Profilepage: FC<ProfilepageProps> = props => {
 	const user = useAppSelector(state => state.user)
 	const dispatch = useAppDispatch()
 	const navigate = useNavigate()
-
-	const exitHandler = () => {
+	const { state: showAddModal, toggleHandler: addModalToggle } = useToggle(
+		false,
+		400
+	)
+	const exitConfirm = useConfirm(() => {
 		navigate('/react-comp')
 		dispatch(removeUser())
-	}
+	})
 
 	return (
 		<div className='container'>
+			<AddDeviceModal show={showAddModal} setShow={addModalToggle} />
+			<ConfirmModal {...exitConfirm} />
 			<div className={styles.profile}>
 				<img
 					title={user.name ? user.name : ''}
@@ -28,16 +37,17 @@ const Profilepage: FC<ProfilepageProps> = props => {
 					alt=''
 				/>
 				<ul className={styles.info}>
-					<li>Имя: {user.name ? user.name : ''}</li>
-					<li>Логин: {user.email ? user.email : ''}</li>
+					<li>Имя: {user.name && user.name}</li>
+					<li>Логин: {user.email && user.email}</li>
+					<li>Роль: {user.role}</li>
 				</ul>
 				<div className={styles.buttons}>
-					{user.role === 'admin' || user.role === 'employee' ? (
-						<BlueButton>Добавить товары</BlueButton>
-					) : (
-						''
+					{(user.role === 'admin' || user.role === 'employee') && (
+						<BlueButton onClick={addModalToggle}>Добавить товары</BlueButton>
 					)}
-					<RedButton onClick={exitHandler}>Выйти из аккаунта</RedButton>
+					<RedButton onClick={_ => exitConfirm.setShow(true)}>
+						Выйти из аккаунта
+					</RedButton>
 				</div>
 			</div>
 		</div>

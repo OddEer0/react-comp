@@ -7,8 +7,8 @@ import styles from './Accordion.module.scss'
 
 const AccordionItem: FC<IAccordion> = ({ title, subItem }) => {
 	const { state: open, toggleHandler } = useToggle()
-	const itemRef = useRef<HTMLButtonElement | null>(null)
-	const subRef = useRef<HTMLDivElement | null>(null)
+	const itemRef = useRef<HTMLButtonElement>(null)
+	const subRef = useRef<HTMLDivElement>(null)
 
 	const fullHeight = () => {
 		let sum = 0

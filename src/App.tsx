@@ -5,9 +5,11 @@ import PageLayout from './components/PageLayout'
 import { useAppDispatch } from './hooks/redux'
 import CatalogPage from './pages/Catalogpage/Catalogpage'
 import DevicePage from './pages/Devicepage/Devicepage'
+import Favoritepage from './pages/Favoritepage/Favoritepage'
 import HomePage from './pages/Homepage/Homepage'
 import Profilepage from './pages/Profilepage/Profilepage'
 import RequireAuthProfilepage from './pages/Profilepage/RequireAuthProfilepage'
+import SingleDevicepage from './pages/SingleDevicepage/SingleDevicepage'
 import { fetchCategory } from './store/actionCreator/categoryAction'
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
 					<Route index element={<HomePage />} />
 					<Route path='catalog' element={<CatalogPage />} />
 					<Route path='catalog/:category' element={<DevicePage />} />
+					<Route path='catalog/:category/:id' element={<SingleDevicepage />} />
+					<Route path='favorite' element={<Favoritepage />} />
 					<Route
 						path='profile'
 						element={

@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { FC, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useAppDispatch } from '../../hooks/redux'
+import { apiService } from '../../services/api/api.service'
 import { setUser } from '../../store/slices/userSlice'
 import { IUser } from '../../types/IUser'
 import BlueButton from '../UI/BlueButton/BlueButton'
@@ -24,9 +25,7 @@ const AuthModal: FC<AuthModalProps> = ({ show, setShow }) => {
 
 	const fetchUser = async (email: string, password: string) => {
 		try {
-			const response = await axios.get<IUser[]>(
-				`https://632feb2ef5fda801f8d8053d.mockapi.io/user?email=${email}`
-			)
+			const response = await axios.get<IUser[]>(apiService.getUserEmail(email))
 			const [data] = await response.data
 
 			if (data.email === email) {

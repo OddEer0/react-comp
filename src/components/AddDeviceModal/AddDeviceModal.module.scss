@@ -1,0 +1,74 @@
+.modal {
+	width: 100%;
+	margin: 0 15px;
+	min-width: 320px;
+	max-width: 1024px;
+	min-height: 80vh;
+	overflow-y: auto;
+	overflow-x: hidden;
+
+	.header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		h1 {
+			font-size: 24px;
+		}
+
+		button {
+			font-size: 24px;
+			color: #ea4335;
+		}
+	}
+
+	.body {
+		.categorySelect {
+			margin-top: 50px;
+		}
+
+		.inputBlock {
+			margin-top: 20px;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			justify-content: space-between;
+			justify-items: center;
+
+			input {
+				margin: 15px 25px;
+				min-width: 210px;
+				width: 90%;
+			}
+		}
+	}
+}
+
+.selectAndInputBlock {
+	margin-top: 20px;
+	margin-bottom: 200px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	.input {
+		width: 90%;
+		margin-top: 30px;
+	}
+	.select {
+		width: 90%;
+		margin-top: 30px;
+		min-width: 210px;
+	}
+	button {
+		margin-top: 40px;
+	}
+}
+
+@media screen and (max-width: 780px) {
+	.modal {
+		.body {
+			.inputBlock {
+				grid-template-columns: 1fr;
+			}
+		}
+	}
+}

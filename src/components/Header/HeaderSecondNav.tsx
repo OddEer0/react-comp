@@ -11,11 +11,12 @@ interface HeaderSecondNavProps {}
 
 const HeaderSecondNav: FC<HeaderSecondNavProps> = props => {
 	const { basketItem } = useAppSelector(state => state.basket)
+	const { favoriteItems } = useAppSelector(state => state.favorite)
 	const { state: showBasket, toggleHandler: toggleBasket } = useToggle(
 		false,
+		400,
 		() => document.body.classList.add('no-scroll-1'),
-		() => document.body.classList.remove('no-scroll-1'),
-		400
+		() => document.body.classList.remove('no-scroll-1')
 	)
 
 	return (
@@ -50,10 +51,10 @@ const HeaderSecondNav: FC<HeaderSecondNavProps> = props => {
 							<img alt='' src={headerImage.scales} />
 							<sub>45</sub>
 						</div>
-						<div className={styles.iconListItem}>
+						<Link to='favorite' className={styles.iconListItem}>
 							<img alt='' src={headerImage.heart} />
-							<sub>45</sub>
-						</div>
+							{favoriteItems.length ? <sub>{favoriteItems.length}</sub> : ''}
+						</Link>
 						<div onClick={toggleBasket} className={styles.iconListItem}>
 							<img alt='' src={headerImage.cart} />
 							{basketItem.length ? <sub>{basketItem.length}</sub> : ''}

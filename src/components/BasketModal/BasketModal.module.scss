@@ -7,6 +7,8 @@
 	display: flex;
 	flex-direction: column;
 	margin: 0 10px;
+	overflow-x: hidden;
+	color: black;
 
 	.header {
 		display: flex;
@@ -29,6 +31,8 @@
 		flex: 1;
 		.itemList {
 			min-height: 400px;
+			max-height: 400px;
+			overflow-y: auto;
 		}
 
 		.buttons {
@@ -36,6 +40,7 @@
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
+			color: black;
 
 			.buy {
 				display: flex;
@@ -56,11 +61,24 @@
 	align-items: center;
 	padding: 12px;
 	border-bottom: 1px solid #cccccc;
+	color: black;
 
 	.itemImage {
 		width: 70px;
 		height: 70px;
 		margin-right: 30px;
+	}
+
+	.wrapper {
+		display: flex;
+		justify-content: space-between;
+		flex: 3;
+	}
+
+	.wrapper2 {
+		display: flex;
+		justify-content: space-between;
+		flex: 1;
 	}
 
 	.itemName {
@@ -130,5 +148,56 @@
 		width: 16px;
 		height: 16px;
 		cursor: pointer;
+	}
+}
+
+@media screen and (max-width: 815px) {
+	.basketItem {
+		height: auto;
+		align-items: center;
+		flex-direction: column;
+
+		.itemImage {
+			margin: 10px 0;
+		}
+
+		.wrapper {
+			height: 100%;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: center;
+			text-align: center;
+
+			.counter {
+				margin: 10px 0;
+			}
+
+			.itemName {
+				flex: 0;
+			}
+		}
+
+		.wrapper2 {
+			height: 100%;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: center;
+			h2 {
+				flex: 0;
+				margin: 10px auto;
+			}
+		}
+	}
+
+	.modal {
+		.body {
+			.buttons {
+				flex-direction: column;
+
+				.buy {
+					margin: 10px 0;
+				}
+			}
+		}
 	}
 }

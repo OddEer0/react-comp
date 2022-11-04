@@ -16,6 +16,7 @@ const DevicePage: FC<DevicePageProps> = props => {
 	const dispatch = useAppDispatch()
 	const { deviceItem, error, isLoading } = useAppSelector(state => state.device)
 	const { basketItem } = useAppSelector(state => state.basket)
+	const { favoriteItems } = useAppSelector(state => state.favorite)
 
 	useEffect(() => {
 		dispatch(
@@ -38,6 +39,7 @@ const DevicePage: FC<DevicePageProps> = props => {
 							key={item.id}
 							item={item}
 							isBasketItem={basketItem.some(i => i.id === item.id)}
+							isFavorite={favoriteItems.some(i => i.id === item.id)}
 						/>
 					))
 				) : (
