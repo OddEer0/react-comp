@@ -6,7 +6,7 @@ export const apiService = {
 	deviceApi: 'https://632feb2ef5fda801f8d8053d.mockapi.io/device',
 	userApi: 'https://632feb2ef5fda801f8d8053d.mockapi.io/user',
 	getCategoryDevice(category: number, limit: number = 20) {
-		return `${this.deviceApi}?category=${category}&limit=${limit}`
+		return `${this.deviceApi}?category=${category}&limit=${limit}&sortBy=date&order=desc`
 	},
 	getUserEmail(email: string) {
 		return `${this.userApi}?email=${email}`
@@ -23,5 +23,17 @@ export const apiService = {
 		} finally {
 			isLoadingFN(false)
 		}
+	},
+	getFilteredDevice(
+		category: number,
+		field: string,
+		page: number,
+		asc: string = 'asc',
+		limit: number = 20
+	) {
+		return `${this.deviceApi}?category=${category}&sortBy=${field}&order=${asc}&limit=${limit}&page=${page}`
+	},
+	getNewDevice(limit: number = 20) {
+		return `${this.deviceApi}?sortBy=date&order=desc&limit=${limit}&page=1`
 	},
 }

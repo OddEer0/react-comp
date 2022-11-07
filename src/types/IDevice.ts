@@ -2,6 +2,13 @@ export interface IDeviceOption {
 	category: number
 }
 
+export interface IFilterDeviceOptions extends IDeviceOption {
+	field: string
+	page: number
+	asc: string
+	limit: number
+}
+
 type PCDevice = {
 	type: string
 }

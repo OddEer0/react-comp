@@ -1,0 +1,35 @@
+.sidebar {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 4px;
+	box-shadow: 0px 2px 10px rgba(50, 50, 71, 0.14);
+	padding: 16px;
+	max-height: 70vh;
+
+	h1 {
+		font-size: 22px;
+	}
+
+	.filterBlock {
+		margin-top: 20px;
+		width: 100%;
+
+		h3 {
+			text-align: center;
+			font-size: 18px;
+		}
+
+		.filterList {
+			li {
+				margin-top: 10px;
+				display: flex;
+
+				h5 {
+					margin-left: 10px;
+				}
+			}
+		}
+	}
+}

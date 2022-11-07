@@ -38,11 +38,13 @@ import linkledin from './icon/social/linkledin.svg'
 import arrow from './icon/arrow.svg'
 import arrowWhite from './icon/arrowWhite.svg'
 import deleteIcon from './icon/delete.svg'
+import checked from './icon/checked.svg'
 
 export const specialIcon = {
 	arrow,
 	arrowWhite,
 	deleteIcon,
+	checked,
 }
 
 export const socialImage = [

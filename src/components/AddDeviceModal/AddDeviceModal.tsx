@@ -66,7 +66,11 @@ const AddDeviceModal: FC<AddDeviceModalProps> = ({ show, setShow }) => {
 	}
 
 	return (
-		<MyModal show={show} setShow={setShow} subClass={styles.modal}>
+		<MyModal
+			show={show}
+			setShow={setShow}
+			subClass={`${styles.modal} ${isLoading && 'no-scroll-1'}`}
+		>
 			<div className={styles.header}>
 				<h1>Добавление товара</h1>
 				<button onClick={setShow}>&#10006;</button>

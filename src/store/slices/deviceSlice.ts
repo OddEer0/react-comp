@@ -1,6 +1,6 @@
 import { AnyAction, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { IDevice } from '../../types/IDevice'
-import { fetchDevice } from '../actionCreator/deviceAction'
+import { fetchDevice, fetchFilterDevice } from '../actionCreator/deviceAction'
 
 interface DeviceState {
 	deviceItem: IDevice[]
@@ -29,6 +29,14 @@ const deviceSlice = createSlice({
 				state.isLoading = true
 			})
 			.addCase(fetchDevice.fulfilled, (state, action) => {
+				state.isLoading = false
+				state.deviceItem = action.payload
+			})
+			.addCase(fetchFilterDevice.pending, state => {
+				state.error = null
+				state.isLoading = true
+			})
+			.addCase(fetchFilterDevice.fulfilled, (state, action) => {
 				state.isLoading = false
 				state.deviceItem = action.payload
 			})

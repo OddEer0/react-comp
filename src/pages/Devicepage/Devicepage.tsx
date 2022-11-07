@@ -3,6 +3,7 @@ import React, { FC, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import ErrorFetch from '../../components/ErrorFetch/ErrorFetch'
 import NotItems from '../../components/NotItems/NotItems'
+import SidebarFilter from '../../components/SidebarFilter/SidebarFilter'
 import DeviceSkeleton from '../../components/Skeletons/DeviceSkeleton'
 import DeviceCard from '../../components/UI/DeviceCard/DeviceCard'
 import { useAppDispatch, useAppSelector } from '../../hooks/redux'
@@ -18,18 +19,19 @@ const DevicePage: FC<DevicePageProps> = props => {
 	const { basketItem } = useAppSelector(state => state.basket)
 	const { favoriteItems } = useAppSelector(state => state.favorite)
 
-	useEffect(() => {
-		dispatch(
-			fetchDevice({
-				category: Number(categoryID),
-			})
-		)
-	}, [])
+	// useEffect(() => {
+	// 	dispatch(
+	// 		fetchDevice({
+	// 			category: Number(categoryID),
+	// 		})
+	// 	)
+	// }, [])
 
 	if (error) return <ErrorFetch error={error} />
 
 	return (
-		<div className='container'>
+		<div className={`container ${styles.container}`}>
+			<SidebarFilter />
 			<div className={styles.content}>
 				{isLoading ? (
 					[...new Array(20)].map((_, index) => <DeviceSkeleton key={index} />)

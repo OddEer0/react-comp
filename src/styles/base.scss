@@ -17,6 +17,10 @@ body {
 	height: 100%;
 }
 
+#root {
+	height: 100%;
+}
+
 .no-scroll-1,
 .no-scroll-2 {
 	overflow: hidden;
@@ -24,4 +28,11 @@ body {
 
 .wrapper {
 	padding-top: 150px;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+main {
+	flex: 1;
 }
