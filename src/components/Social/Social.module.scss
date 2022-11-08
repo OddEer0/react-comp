@@ -1,0 +1,17 @@
+.social {
+	margin-top: 12px;
+	h2 {
+		font-size: 18px;
+	}
+
+	.socialIcons {
+		margin-top: 12px;
+		img:not(:last-child) {
+			margin-right: 8px;
+		}
+
+		img {
+			cursor: pointer;
+		}
+	}
+}

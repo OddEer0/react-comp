@@ -1,31 +1,19 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { FC, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import React, { FC } from 'react'
 import ErrorFetch from '../../components/ErrorFetch/ErrorFetch'
 import NotItems from '../../components/NotItems/NotItems'
 import SidebarFilter from '../../components/SidebarFilter/SidebarFilter'
 import DeviceSkeleton from '../../components/Skeletons/DeviceSkeleton'
 import DeviceCard from '../../components/UI/DeviceCard/DeviceCard'
-import { useAppDispatch, useAppSelector } from '../../hooks/redux'
-import { fetchDevice } from '../../store/actionCreator/deviceAction'
+import { useAppSelector } from '../../hooks/redux'
 import styles from './Devicepage.module.scss'
 
 interface DevicePageProps {}
 
 const DevicePage: FC<DevicePageProps> = props => {
-	const { category: categoryID } = useParams()
-	const dispatch = useAppDispatch()
 	const { deviceItem, error, isLoading } = useAppSelector(state => state.device)
 	const { basketItem } = useAppSelector(state => state.basket)
 	const { favoriteItems } = useAppSelector(state => state.favorite)
-
-	// useEffect(() => {
-	// 	dispatch(
-	// 		fetchDevice({
-	// 			category: Number(categoryID),
-	// 		})
-	// 	)
-	// }, [])
 
 	if (error) return <ErrorFetch error={error} />
 
