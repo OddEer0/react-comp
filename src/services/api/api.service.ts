@@ -36,4 +36,7 @@ export const apiService = {
 	getNewDevice(limit: number = 20) {
 		return `${this.deviceApi}?sortBy=date&order=desc&limit=${limit}&page=1`
 	},
+	getSearchDevice(searchValue: string, limit: number = 25) {
+		return `${this.deviceApi}?name=${searchValue}&limit=${limit}&page=1`
+	},
 }

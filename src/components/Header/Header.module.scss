@@ -61,40 +61,6 @@
 	justify-content: space-between;
 }
 
-.searchBlock {
-	flex: 1;
-	border: 1px solid #e6e6e6;
-	background: white;
-	max-width: 758px;
-	height: 42px;
-	display: flex;
-	border-radius: 4px;
-}
-
-.searchBlockInput {
-	height: 100%;
-	border-radius: 4px;
-	flex: 1;
-	font-weight: 600;
-	font-size: 16px;
-	padding: 0 12px;
-}
-
-.searchBlockIcon {
-	width: 48px;
-	height: 100%;
-	background: #01579b;
-	border-radius: 0px 4px 4px 0px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	transition: background 0.3s ease-in-out;
-
-	&:hover {
-		background: #0c1c76;
-	}
-}
-
 .iconList {
 	display: flex;
 	margin-left: 5px;

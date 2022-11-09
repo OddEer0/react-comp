@@ -4,6 +4,7 @@ import { headerImage } from '../../assets/img'
 import { useAppSelector } from '../../hooks/redux'
 import { useToggle } from '../../hooks/useToggle'
 import BasketModal from '../BasketModal/BasketModal'
+import SearchModal from '../SearchModal/SearchModal'
 import GreenButton from '../UI/GreenButton/GreenButton'
 import styles from './Header.module.scss'
 
@@ -29,17 +30,7 @@ const HeaderSecondNav: FC<HeaderSecondNavProps> = props => {
 					<Link to='/react-comp/catalog'>
 						<GreenButton title='Каталог товаров' src={headerImage.catalog} />
 					</Link>
-					<div className={styles.searchBlock}>
-						<input
-							id='search'
-							className={styles.searchBlockInput}
-							type='text'
-							placeholder='Поиск'
-						/>
-						<label htmlFor='search' className={styles.searchBlockIcon}>
-							<img src={headerImage.search} alt='' />
-						</label>
-					</div>
+					<SearchModal />
 					<img
 						className={styles.searchIcon}
 						src={headerImage.searchMobile}
