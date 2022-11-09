@@ -33,15 +33,16 @@ const SearchModal: FC<SearchModalProps> = props => {
 	}
 
 	const openModal = () => {
-		setShowSearch(true)
-		fetchData()
+		if (data.length) setShowSearch(true)
 	}
 
 	const debounce = useDebounce(() => {
 		if (searchValue && searchValue.length > 3) {
-			openModal()
+			setShowSearch(true)
+			fetchData()
 		} else {
 			setShowSearch(false)
+			setData([])
 		}
 	}, 2000)
 
