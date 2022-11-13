@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-comp/static/css/main.f8168d10.css",
-    "main.js": "/react-comp/static/js/main.167c7c21.js",
+    "main.css": "/react-comp/static/css/main.cfe4a619.css",
+    "main.js": "/react-comp/static/js/main.347207c0.js",
     "static/media/4.jpg": "/react-comp/static/media/4.8bff2d0746714f2134d0.jpg",
     "static/media/3.jpg": "/react-comp/static/media/3.cd5e56ba7d6a450d8c29.jpg",
     "static/media/2.jpg": "/react-comp/static/media/2.a32cfabaea0ee9dbad57.jpg",
@@ -30,6 +30,7 @@
     "static/media/linkledin.svg": "/react-comp/static/media/linkledin.0a9459a05a3d27b16b9b9060af565d45.svg",
     "static/media/youtube.svg": "/react-comp/static/media/youtube.559ea8112b8609a61b32c9115a603afb.svg",
     "static/media/2.svg": "/react-comp/static/media/2.93f432454a37b4724cf749412b8e49ef.svg",
+    "static/media/check.svg": "/react-comp/static/media/check.8007e1a85c82ab6fdefeef1464223fbb.svg",
     "index.html": "/react-comp/index.html",
     "static/media/user.svg": "/react-comp/static/media/user.64d8720eaee840917674599225f560b3.svg",
     "static/media/7.svg": "/react-comp/static/media/7.3ac2dcc485a22476059783ac528bd29c.svg",
@@ -40,11 +41,11 @@
     "static/media/arrow.svg": "/react-comp/static/media/arrow.09acdce7488a8a2cf3d4c677e1b5b8a3.svg",
     "static/media/checked.svg": "/react-comp/static/media/checked.7340aab4194a0ad3f5aa331a99de80d1.svg",
     "static/media/arrowWhite.svg": "/react-comp/static/media/arrowWhite.52cecd5e492de8a42f82b4d0fd815573.svg",
-    "main.f8168d10.css.map": "/react-comp/static/css/main.f8168d10.css.map",
-    "main.167c7c21.js.map": "/react-comp/static/js/main.167c7c21.js.map"
+    "main.cfe4a619.css.map": "/react-comp/static/css/main.cfe4a619.css.map",
+    "main.347207c0.js.map": "/react-comp/static/js/main.347207c0.js.map"
   },
   "entrypoints": [
-    "static/css/main.f8168d10.css",
-    "static/js/main.167c7c21.js"
+    "static/css/main.cfe4a619.css",
+    "static/js/main.347207c0.js"
   ]
 }
