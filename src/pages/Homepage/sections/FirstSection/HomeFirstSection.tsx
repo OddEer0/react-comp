@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
-import SidebarMenu from '../../../../components/SidebarMenu/SidebarMenu'
-import SliderImage from '../../../../components/Sliders/SliderImage'
+import SidebarMenu from '../../../../components/collection/menus/SidebarMenu/SidebarMenu'
+import SliderImage from '../../../../components/collection/sliders/Sliders/SliderImage'
 import { useAppSelector } from '../../../../hooks/redux'
 import styles from './HomeFirstSection.module.scss'
 

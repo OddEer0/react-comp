@@ -35,16 +35,18 @@ import viber from './icon/social/viber.svg'
 import youtube from './icon/social/youtube.svg'
 import linkledin from './icon/social/linkledin.svg'
 
-import arrow from './icon/arrow.svg'
-import arrowWhite from './icon/arrowWhite.svg'
-import deleteIcon from './icon/delete.svg'
-import checked from './icon/checked.svg'
+import arrow from './icon/base/arrow.svg'
+import arrowWhite from './icon/base/arrowWhite.svg'
+import deleteIcon from './icon/base/delete.svg'
+import checked from './icon/base/checked.svg'
+import check from './icon/base/check.svg'
 
 export const specialIcon = {
 	arrow,
 	arrowWhite,
 	deleteIcon,
 	checked,
+	check,
 }
 
 export const socialImage = [

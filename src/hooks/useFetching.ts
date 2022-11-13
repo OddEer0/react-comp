@@ -1,7 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react'
 
-export const useFetching = <T>(url: string) => {
+export const useFetching = <T>(
+	url: string
+): [T | undefined, string, boolean] => {
 	const [isLoading, setIsLoading] = useState(false)
 	const [error, setError] = useState<string>('')
 	const [data, setData] = useState<T>()

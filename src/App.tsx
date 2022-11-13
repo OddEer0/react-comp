@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import PageLayout from './components/PageLayout'
+import PageLayout from './components/layout/PageLayout'
 import { useAppDispatch } from './hooks/redux'
 import CatalogPage from './pages/Catalogpage/Catalogpage'
 import DevicePage from './pages/Devicepage/Devicepage'
@@ -10,7 +10,7 @@ import HomePage from './pages/Homepage/Homepage'
 import Profilepage from './pages/Profilepage/Profilepage'
 import RequireAuthProfilepage from './pages/Profilepage/RequireAuthProfilepage'
 import SingleDevicepage from './pages/SingleDevicepage/SingleDevicepage'
-import { fetchCategory } from './store/actionCreator/categoryAction'
+import { fetchCategory } from './store/category/categoryAction'
 
 function App() {
 	const dispatch = useAppDispatch()

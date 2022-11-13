@@ -1,11 +1,11 @@
 import React, { FC } from 'react'
 import styles from './Catalogpage.module.scss'
 import { useAppSelector } from '../../hooks/redux'
-import CategoryCard from '../../components/UI/CategoryCard/CategoryCard'
+import CategoryCard from '../../components/collection/cards/CategoryCard/CategoryCard'
 import { categoryImage } from '../../assets/img'
 import { Link } from 'react-router-dom'
-import ErrorFetch from '../../components/ErrorFetch/ErrorFetch'
-import CategorySkeleton from '../../components/Skeletons/CategorySkeletons'
+import ErrorFetch from '../../components/shared/ErrorFetch/ErrorFetch'
+import CategorySkeleton from '../../components/ui/skeletons/CategorySkeletons'
 
 interface CatalogPageProps {}
 

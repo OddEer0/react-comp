@@ -1,19 +1,8 @@
-/* eslint-disable @typescript-eslint/consistent-type-assertions */
 import { configureStore } from '@reduxjs/toolkit'
-import basketReducer from './slices/basketSlice'
-import categoryReducer from './slices/categorySlice'
-import deviceReducer from './slices/deviceSlice'
-import favoriteReducer from './slices/favoriteSlice'
-import userReducer from './slices/userSlice'
+import { rootReducer } from './rootReducer'
 
 const store = configureStore({
-	reducer: {
-		basket: basketReducer,
-		device: deviceReducer,
-		category: categoryReducer,
-		user: userReducer,
-		favorite: favoriteReducer,
-	},
+	reducer: rootReducer,
 })
 
 export default store

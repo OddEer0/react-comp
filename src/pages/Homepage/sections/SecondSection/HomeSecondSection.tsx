@@ -1,8 +1,8 @@
 import React, { FC } from 'react'
-import ErrorFetch from '../../../../components/ErrorFetch/ErrorFetch'
-import NotItems from '../../../../components/NotItems/NotItems'
-import DeviceSkeleton from '../../../../components/Skeletons/DeviceSkeleton'
-import DeviceCard from '../../../../components/UI/DeviceCard/DeviceCard'
+import ErrorFetch from '../../../../components/shared/ErrorFetch/ErrorFetch'
+import NotItems from '../../../../components/shared/NotItems/NotItems'
+import DeviceSkeleton from '../../../../components/ui/skeletons/DeviceSkeleton'
+import DeviceCard from '../../../../components/collection/cards/DeviceCard/DeviceCard'
 import { useAppSelector } from '../../../../hooks/redux'
 import { useFetching } from '../../../../hooks/useFetching'
 import { apiService } from '../../../../services/api/api.service'
@@ -26,9 +26,7 @@ const HomeSecondSection: FC<HomeSecondSectionProps> = props => {
 					{error ? (
 						<ErrorFetch error={'Что то пошло не так'} />
 					) : isLoading ? (
-						[...new Array(10)].map((device, index) => (
-							<DeviceSkeleton key={index} />
-						))
+						[...new Array(10)].map((_, index) => <DeviceSkeleton key={index} />)
 					) : Array.isArray(devices) ? (
 						devices.map(device => (
 							<DeviceCard

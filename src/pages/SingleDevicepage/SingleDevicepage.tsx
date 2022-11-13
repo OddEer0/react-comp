@@ -1,40 +1,33 @@
-import React, { FC, useRef, useState } from 'react'
+import React, { FC } from 'react'
 import { useParams } from 'react-router-dom'
+import ErrorFetch from '../../components/shared/ErrorFetch/ErrorFetch'
+import SinglePageImgSkeleton from '../../components/ui/skeletons/SinglePageImgSkeleton'
 import { useFetching } from '../../hooks/useFetching'
 import { apiService } from '../../services/api/api.service'
-import styles from './SingleDevice.module.scss'
+import { IDevice } from '../../types/IDevice'
+import FirstSection from './section/FirstSection/FirstSection'
 
-interface SingleDevicepageProps {}
+interface SingleDevicePageProps {}
 
-const SingleDevicepage: FC<SingleDevicepageProps> = props => {
+const SingleDevicePage: FC<SingleDevicePageProps> = props => {
 	const params = useParams()
-	const [device, error, isLoading] = useFetching(
+	const [data, error, isLoading] = useFetching<IDevice[]>(
 		apiService.getDevice(params.id as string)
 	)
+	if (error) <ErrorFetch error='Что то пошло не так' />
 
-	const count = useRef<number>(10)
-	const [state, setState] = useState(5)
-
-	console.log('rerender')
-
-	const handle = () => {
-		console.log((count.current += 1))
-	}
-
-	const handler = () => {
-		setState(prev => prev + 1)
-	}
+	if (isLoading)
+		return (
+			<div className={['container'].join(' ')}>
+				<SinglePageImgSkeleton />
+			</div>
+		)
 
 	return (
-		<div className='container'>
-			<div className='dss'>
-				<h1>{state}</h1>
-				<h1>{count.current}</h1>
-				<button onClick={handle}>click</button>
-				<button onClick={handler}>click</button>
-			</div>
-		</div>
+		<>
+			<FirstSection item={data ? data[0] : ({} as IDevice)} />
+		</>
 	)
 }
 
-export default SingleDevicepage
+export default SingleDevicePage

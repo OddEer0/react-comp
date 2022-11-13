@@ -1,13 +1,13 @@
 import { FC } from 'react'
 import { useNavigate } from 'react-router-dom'
-import AddDeviceModal from '../../components/AddDeviceModal/AddDeviceModal'
-import ConfirmModal from '../../components/ConfirmModal/ConfirmModal'
-import BlueButton from '../../components/UI/BlueButton/BlueButton'
-import RedButton from '../../components/UI/RedButton/RedButton'
+import AddDeviceModal from '../../components/collection/modals/AddDeviceModal/AddDeviceModal'
+import ConfirmModal from '../../components/collection/modals/ConfirmModal/ConfirmModal'
+import BlueButton from '../../components/ui/buttons/BlueButton/BlueButton'
+import RedButton from '../../components/ui/buttons/RedButton/RedButton'
 import { useAppDispatch, useAppSelector } from '../../hooks/redux'
 import { useConfirm } from '../../hooks/useConfirm'
 import { useToggle } from '../../hooks/useToggle'
-import { removeUser } from '../../store/slices/userSlice'
+import { removeUser } from '../../store/user/userSlice'
 import styles from './Profilepage.module.scss'
 
 interface ProfilepageProps {}

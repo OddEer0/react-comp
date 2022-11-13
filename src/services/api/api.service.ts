@@ -1,4 +1,4 @@
-import axios from 'axios'
+import { $api } from '../../libs/axios'
 import { IDevice } from '../../types/IDevice'
 
 export const apiService = {
@@ -17,7 +17,8 @@ export const apiService = {
 	async postDevice(device: IDevice, isLoadingFN: (bool: boolean) => void) {
 		try {
 			isLoadingFN(true)
-			await axios.post(this.deviceApi, device)
+			// await axios.post(this.deviceApi, device)
+			await $api.post('device', device)
 		} catch (e) {
 			console.error((e as Error).message)
 		} finally {
@@ -38,5 +39,14 @@ export const apiService = {
 	},
 	getSearchDevice(searchValue: string, limit: number = 25) {
 		return `${this.deviceApi}?name=${searchValue}&limit=${limit}&page=1`
+	},
+	async removeDevice(id: string | number, callback: () => void) {
+		try {
+			await $api.delete(`device/${id}`)
+		} catch (e) {
+			console.error((e as Error).message)
+		} finally {
+			callback()
+		}
 	},
 }
