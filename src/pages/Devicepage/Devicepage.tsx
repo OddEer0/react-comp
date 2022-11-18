@@ -38,7 +38,19 @@ const DevicePage: FC<DevicePageProps> = props => {
 		filterDispatch({ type: (e as IOption).value })
 	}
 
-	if (error) return <ErrorFetch error={error} />
+	if (error) {
+		return <ErrorFetch error={error} />
+	}
+
+	if (isLoading) {
+		return (
+			<div className={`container ${styles.content}`}>
+				{[...new Array(20)].map((_, index) => (
+					<DeviceSkeleton key={index} />
+				))}
+			</div>
+		)
+	}
 
 	return (
 		<div className={`container ${styles.container}`}>
@@ -51,9 +63,7 @@ const DevicePage: FC<DevicePageProps> = props => {
 				/>
 			</div>
 			<div className={styles.content}>
-				{isLoading ? (
-					[...new Array(20)].map((_, index) => <DeviceSkeleton key={index} />)
-				) : deviceItem.length ? (
+				{deviceItem.length ? (
 					deviceItem.map(item => (
 						<DeviceCard
 							key={item.id}

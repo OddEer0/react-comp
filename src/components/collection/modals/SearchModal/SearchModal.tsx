@@ -11,9 +11,12 @@ import Loading from '../../../shared/Loading/Loading'
 import styles from './SearchModal.module.scss'
 import SearchModalItems from './SearchModalItems'
 
-interface SearchModalProps {}
+interface SearchModalProps {
+	show: boolean
+	setShow: () => void
+}
 
-const SearchModal: FC<SearchModalProps> = props => {
+const SearchModal: FC<SearchModalProps> = ({ show, setShow }) => {
 	const [isLoading, setIsLoading] = useState(false)
 	const [error, setError] = useState('')
 	const [data, setData] = useState<IDevice[]>([])
@@ -53,7 +56,16 @@ const SearchModal: FC<SearchModalProps> = props => {
 	const closeHandler = () => setShowSearch(false)
 
 	return (
-		<div className={styles.searchBlock}>
+		<div
+			className={
+				show
+					? [styles.searchBlock, styles.searchBlockActive].join(' ')
+					: styles.searchBlock
+			}
+		>
+			<button onClick={setShow} className={styles.inputClose}>
+				&#10006;
+			</button>
 			<input
 				value={searchValue}
 				onChange={e => setSearchValue(e.target.value)}

@@ -9,6 +9,11 @@
 	margin: 16px;
 	display: flex;
 	flex-direction: column;
+
+	&:hover .footer {
+		opacity: 1;
+		visibility: visible;
+	}
 }
 
 .header {
@@ -141,5 +146,38 @@
 	&::before,
 	&::after {
 		background: rgb(255, 58, 58);
+	}
+}
+
+.footer {
+	width: 100%;
+	background-color: white;
+	position: absolute;
+	top: 98%;
+	left: 0;
+	z-index: 10;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+	border-radius: 0 0 4px 4px;
+	border-bottom: 1px solid rgba(117, 117, 117, 0.433);
+	border-left: 1px solid rgba(117, 117, 117, 0.433);
+	border-right: 1px solid rgba(117, 117, 117, 0.433);
+	pointer-events: none;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	padding: 12px 12px;
+
+	.infoList {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.infoTitle {
+		width: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 }

@@ -1,4 +1,6 @@
 import React, { FC } from 'react'
+import { BsCart3, BsHeart } from 'react-icons/bs'
+import { RiScales3Line } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
 import { headerImage } from '../../../assets/img'
 import { useAppSelector } from '../../../hooks/redux'
@@ -19,6 +21,13 @@ const HeaderSecondNav: FC<HeaderSecondNavProps> = props => {
 		() => document.body.classList.add('no-scroll-1'),
 		() => document.body.classList.remove('no-scroll-1')
 	)
+	const { state: showSearchBlock, toggleHandler: setShowSearchBlock } =
+		useToggle(
+			false,
+			400,
+			() => document.body.classList.add('no-scroll-1'),
+			() => document.body.classList.remove('no-scroll-1')
+		)
 
 	return (
 		<nav className={styles.navbarTwo}>
@@ -30,8 +39,9 @@ const HeaderSecondNav: FC<HeaderSecondNavProps> = props => {
 					<Link to='/react-comp/catalog'>
 						<GreenButton title='Каталог товаров' src={headerImage.catalog} />
 					</Link>
-					<SearchModal />
+					<SearchModal show={showSearchBlock} setShow={setShowSearchBlock} />
 					<img
+						onClick={setShowSearchBlock}
 						className={styles.searchIcon}
 						src={headerImage.searchMobile}
 						alt=''
@@ -39,20 +49,20 @@ const HeaderSecondNav: FC<HeaderSecondNavProps> = props => {
 					<div className={styles.contact}>050 065 87 96</div>
 					<div className={styles.iconList}>
 						<div className={styles.iconListItem}>
-							<img alt='' src={headerImage.scales} />
+							<RiScales3Line className={styles.icon} />
 							<sub>45</sub>
 						</div>
 						<Link to='favorite' className={styles.iconListItem}>
-							<img alt='' src={headerImage.heart} />
+							<BsHeart className={styles.icon} />
 							{favoriteItems.length ? <sub>{favoriteItems.length}</sub> : ''}
 						</Link>
 						<div onClick={toggleBasket} className={styles.iconListItem}>
-							<img alt='' src={headerImage.cart} />
+							<BsCart3 className={styles.icon} />
 							{basketItem.length ? <sub>{basketItem.length}</sub> : ''}
 						</div>
 					</div>
 					<div className={styles.iconListWhite}>
-						<img onClick={toggleBasket} alt='' src={headerImage.cartWhite} />
+						<BsCart3 onClick={toggleBasket} className={styles.icon} />
 					</div>
 				</div>
 			</div>

@@ -1,0 +1,25 @@
+body[data-theme='light'] {
+	--bg-white: white;
+	--bg-gray: rgb(214, 214, 214);
+	--bg-dark-blue: #060f42;
+	--bg-header-white: white;
+	--bg-lime: #06a56c;
+	--text-black: black;
+	--text-white: white;
+	--text-const-white: white;
+	--icon-dark-blue: #060f42;
+	--box-shadow-black: 0px 4px 4px rgba(0, 0, 0, 0.06);
+}
+
+body[data-theme='dark'] {
+	--bg-white: #292733;
+	--bg-gray: rgb(70, 70, 70);
+	--bg-dark-blue: #111135;
+	--bg-header-white: #111135;
+	--bg-lime: #06a56c;
+	--text-black: white;
+	--text-white: black;
+	--text-const-white: white;
+	--icon-dark-blue: #ffffff;
+	--box-shadow-black: 0px 4px 4px rgba(0, 0, 0, 0.06);
+}

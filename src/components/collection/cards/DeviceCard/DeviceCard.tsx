@@ -1,4 +1,5 @@
-import React, { FC } from 'react'
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { FC, useMemo } from 'react'
 import styles from './DeviceCard.module.scss'
 import { IDevice } from '../../../../types/IDevice'
 import { headerImage } from '../../../../assets/img'
@@ -17,6 +18,8 @@ import {
 } from '../../../../store/favorite/favoriteSlice'
 import { Link } from 'react-router-dom'
 import NewPendant from '../../../ui/pendants/NewPendants/NewPendant'
+import List from '../../../shared/List/List'
+import { parseArrayInObj } from '../../../../utils/helpers/parseArrayInObj'
 
 interface DeviceCardProps {
 	item: IDevice
@@ -36,6 +39,10 @@ const DeviceCard: FC<DeviceCardProps> = React.memo(
 			if (isFavorite) dispatch(removeFavoriteItem(item.id))
 			else dispatch(addFavoriteItem(item))
 		}, 300)
+
+		const info = useMemo(() => {
+			return parseArrayInObj(item.info ? item.info : {}, 3)
+		}, [])
 
 		return (
 			<div className={styles.card}>
@@ -100,6 +107,21 @@ const DeviceCard: FC<DeviceCardProps> = React.memo(
 						</div>
 						<GreenButton title='Купить' />
 					</div>
+				</div>
+				<div className={styles.footer}>
+					{info ? (
+						<List
+							className={styles.infoList}
+							items={info}
+							renderItem={(item, index) => (
+								<span className={styles.infoTitle} key={index}>
+									{item[0]}: {item[1]}
+								</span>
+							)}
+						/>
+					) : (
+						''
+					)}
 				</div>
 			</div>
 		)
