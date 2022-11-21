@@ -19,6 +19,8 @@ body[data-theme='light'] {
 	--rate-yellow: rgb(220, 195, 33);
 	--neon-blue-button: #091768;
 	--logo-blue: #01579b;
+	--bg-loader: #e0e0e0;
+	--loader-color: #337ab7;
 }
 
 body[data-theme='dark'] {
@@ -42,4 +44,6 @@ body[data-theme='dark'] {
 	--rate-yellow: rgb(220, 195, 33);
 	--neon-blue-button: #ffcd1b;
 	--logo-blue: white;
+	--bg-loader: #211f2d;
+	--loader-color: #ffcd1b;
 }

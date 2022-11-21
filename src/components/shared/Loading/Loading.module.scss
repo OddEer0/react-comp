@@ -5,7 +5,7 @@
 	left: 0;
 	top: 0;
 	/* фоновый цвет элемента */
-	background: #e0e0e0;
+	background: var(--bg-loader);
 	/* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
 	z-index: 1001;
 	width: 100%;
@@ -28,7 +28,7 @@
 	position: absolute;
 	display: inline-block;
 	top: 0;
-	background-color: #337ab7;
+	background-color: var(--loader-color);
 	border-radius: 100%;
 	width: 35px;
 	height: 35px;
