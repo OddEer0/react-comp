@@ -2,17 +2,18 @@ import { FC } from 'react'
 import { useNavigate } from 'react-router-dom'
 import AddDeviceModal from '../../components/collection/modals/AddDeviceModal/AddDeviceModal'
 import ConfirmModal from '../../components/collection/modals/ConfirmModal/ConfirmModal'
+import Container from '../../components/layout/Container/Container'
 import BlueButton from '../../components/ui/buttons/BlueButton/BlueButton'
 import RedButton from '../../components/ui/buttons/RedButton/RedButton'
 import { useAppDispatch, useAppSelector } from '../../hooks/redux'
 import { useConfirm } from '../../hooks/useConfirm'
 import { useToggle } from '../../hooks/useToggle'
 import { removeUser } from '../../store/user/userSlice'
-import styles from './Profilepage.module.scss'
+import styles from './ProfilePage.module.scss'
 
-interface ProfilepageProps {}
+interface ProfilePageProps {}
 
-const Profilepage: FC<ProfilepageProps> = props => {
+const ProfilePage: FC<ProfilePageProps> = props => {
 	const user = useAppSelector(state => state.user)
 	const dispatch = useAppDispatch()
 	const navigate = useNavigate()
@@ -26,7 +27,7 @@ const Profilepage: FC<ProfilepageProps> = props => {
 	})
 
 	return (
-		<div className='container'>
+		<Container>
 			<AddDeviceModal show={showAddModal} setShow={addModalToggle} />
 			<ConfirmModal {...exitConfirm} />
 			<div className={styles.profile}>
@@ -50,8 +51,8 @@ const Profilepage: FC<ProfilepageProps> = props => {
 					</RedButton>
 				</div>
 			</div>
-		</div>
+		</Container>
 	)
 }
 
-export default Profilepage
+export default ProfilePage

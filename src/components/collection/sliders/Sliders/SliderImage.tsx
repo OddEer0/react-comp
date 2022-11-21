@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
-import { sliderImage } from '../../../../assets/img'
+import { sliderImage } from '../../../../assets/img/slider'
 import styles from './SliderImage.module.scss'
 
 interface SliderImageProps {}

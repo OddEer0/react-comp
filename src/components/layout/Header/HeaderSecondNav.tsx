@@ -2,12 +2,14 @@ import React, { FC } from 'react'
 import { BsCart3, BsHeart } from 'react-icons/bs'
 import { RiScales3Line } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
-import { headerImage } from '../../../assets/img'
+import { headerIcons } from '../../../assets/icon/header'
+import { FiSearch } from 'react-icons/fi'
 import { useAppSelector } from '../../../hooks/redux'
 import { useToggle } from '../../../hooks/useToggle'
 import BasketModal from '../../collection/modals/BasketModal/BasketModal'
 import SearchModal from '../../collection/modals/SearchModal/SearchModal'
 import GreenButton from '../../ui/buttons/GreenButton/GreenButton'
+import Container from '../Container/Container'
 import styles from './Header.module.scss'
 
 interface HeaderSecondNavProps {}
@@ -29,22 +31,22 @@ const HeaderSecondNav: FC<HeaderSecondNavProps> = props => {
 			() => document.body.classList.remove('no-scroll-1')
 		)
 
+	const Logo = headerIcons.Logo
+
 	return (
 		<nav className={styles.navbarTwo}>
-			<div className='container'>
+			<Container>
 				<div className={styles.navbarTwoContent}>
 					<Link to='/react-comp'>
-						<img className={styles.logo} src={headerImage.Logo} alt='' />
+						<Logo className={styles.logo} />
 					</Link>
 					<Link to='/react-comp/catalog'>
-						<GreenButton title='Каталог товаров' src={headerImage.catalog} />
+						<GreenButton title='Каталог товаров' src={headerIcons.catalog} />
 					</Link>
 					<SearchModal show={showSearchBlock} setShow={setShowSearchBlock} />
-					<img
+					<FiSearch
 						onClick={setShowSearchBlock}
 						className={styles.searchIcon}
-						src={headerImage.searchMobile}
-						alt=''
 					/>
 					<div className={styles.contact}>050 065 87 96</div>
 					<div className={styles.iconList}>
@@ -65,7 +67,7 @@ const HeaderSecondNav: FC<HeaderSecondNavProps> = props => {
 						<BsCart3 onClick={toggleBasket} className={styles.icon} />
 					</div>
 				</div>
-			</div>
+			</Container>
 			<BasketModal show={showBasket} setShow={toggleBasket} />
 		</nav>
 	)

@@ -5,13 +5,14 @@ import Contacts from '../../shared/Contacts/Contacts'
 import Social from '../../shared/Social/Social'
 import List from '../../shared/List/List'
 import styles from './Footer.module.scss'
+import Container from '../Container/Container'
 
 interface FooterProps {}
 
 const Footer: FC<FooterProps> = props => {
 	return (
 		<footer className={styles.footer}>
-			<div className='container'>
+			<Container>
 				<div className={styles.content}>
 					{footerData.map(data => (
 						<div key={data.id} className={styles.list}>
@@ -33,7 +34,7 @@ const Footer: FC<FooterProps> = props => {
 					<Contacts />
 					<Social />
 				</div>
-			</div>
+			</Container>
 		</footer>
 	)
 }

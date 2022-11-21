@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import SidebarMenu from '../../../../components/collection/menus/SidebarMenu/SidebarMenu'
 import SliderImage from '../../../../components/collection/sliders/Sliders/SliderImage'
+import Container from '../../../../components/layout/Container/Container'
 import { useAppSelector } from '../../../../hooks/redux'
 import styles from './HomeFirstSection.module.scss'
 
@@ -13,12 +14,12 @@ const HomeFirstSection: FC<HomeFirstSectionProps> = props => {
 
 	return (
 		<section className={styles.section}>
-			<div className={`container ${styles.container}`}>
+			<Container className={styles.container}>
 				<SidebarMenu items={categoryItem} isLoading={isLoading} error={error} />
 				<div className={styles.content}>
 					<SliderImage />
 				</div>
-			</div>
+			</Container>
 		</section>
 	)
 }

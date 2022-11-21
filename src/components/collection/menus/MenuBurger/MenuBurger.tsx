@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { headerImage } from '../../../../assets/img'
+import { headerIcons } from '../../../../assets/icon/header'
 import { AccordionItem } from '../../../../utils/constants/consts'
 import Accordion from '../../../shared/Accordion/Accordion'
 import Contacts from '../../../shared/Contacts/Contacts'
@@ -12,11 +12,13 @@ interface MenuBurgerProps {
 }
 
 const MenuBurger: FC<MenuBurgerProps> = ({ show, setShow }) => {
+	const Logo = headerIcons.Logo2
+
 	return (
 		<>
 			<div className={`${styles.menuBurger} ${show ? styles.menuActive : ''}`}>
 				<div className={styles.header}>
-					<img src={headerImage.Logo2} alt='' />
+					<Logo />
 					<button onClick={setShow}>&#10006;</button>
 				</div>
 				<div className={styles.body}>

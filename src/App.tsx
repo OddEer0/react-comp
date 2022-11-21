@@ -3,13 +3,14 @@ import React, { useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import PageLayout from './components/layout/PageLayout'
 import { useAppDispatch } from './hooks/redux'
-import CatalogPage from './pages/Catalogpage/Catalogpage'
-import DevicePage from './pages/Devicepage/Devicepage'
-import Favoritepage from './pages/Favoritepage/Favoritepage'
-import HomePage from './pages/Homepage/Homepage'
-import Profilepage from './pages/Profilepage/Profilepage'
-import RequireAuthProfilepage from './pages/Profilepage/RequireAuthProfilepage'
-import SingleDevicepage from './pages/SingleDevicepage/SingleDevicepage'
+import CatalogPage from './pages/CatalogPage/CatalogPage'
+import DevicePage from './pages/DevicePage/DevicePage'
+import ErrorPage from './pages/ErrorPage/ErrorPage'
+import FavoritePage from './pages/FavoritePage/FavoritePage'
+import HomePage from './pages/Homepage/HomePage'
+import ProfilePage from './pages/ProfilePage/ProfilePage'
+import RequireAuthProfilePage from './pages/ProfilePage/RequireAuthProfilePage'
+import SingleDevicePage from './pages/SingleDevicePage/SingleDevicePage'
 import { fetchCategory } from './store/category/categoryAction'
 
 function App() {
@@ -26,16 +27,17 @@ function App() {
 					<Route index element={<HomePage />} />
 					<Route path='catalog' element={<CatalogPage />} />
 					<Route path='catalog/:category' element={<DevicePage />} />
-					<Route path='catalog/:category/:id' element={<SingleDevicepage />} />
-					<Route path='favorite' element={<Favoritepage />} />
+					<Route path='catalog/:category/:id' element={<SingleDevicePage />} />
+					<Route path='favorite' element={<FavoritePage />} />
 					<Route
 						path='profile'
 						element={
-							<RequireAuthProfilepage>
-								<Profilepage />
-							</RequireAuthProfilepage>
+							<RequireAuthProfilePage>
+								<ProfilePage />
+							</RequireAuthProfilePage>
 						}
 					/>
+					<Route path='*' element={<ErrorPage />} />
 				</Route>
 			</Routes>
 		</div>

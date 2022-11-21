@@ -8,13 +8,13 @@
 	flex-direction: column;
 	margin: 0 10px;
 	overflow-x: hidden;
-	color: black;
+	color: var(--text-black);
 
 	.header {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		border-bottom: 1px solid #cccccc;
+		border-bottom: 1px solid var(--bg-gray);
 		padding-bottom: 24px;
 
 		h1 {
@@ -40,7 +40,7 @@
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
-			color: black;
+			color: var(--text-black);
 
 			.buy {
 				display: flex;
@@ -60,8 +60,8 @@
 	display: flex;
 	align-items: center;
 	padding: 12px;
-	border-bottom: 1px solid #cccccc;
-	color: black;
+	border-bottom: 1px solid var(--bg-gray);
+	color: var(--text-black);
 
 	.itemImage {
 		width: 70px;
@@ -95,7 +95,7 @@
 			width: 32px;
 			height: 32px;
 			border-radius: 50%;
-			background: rgba(230, 230, 230, 0.5);
+			background: var(--bg-gray);
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -103,7 +103,7 @@
 			span {
 				height: 2px;
 				width: 60%;
-				background-color: #01579b;
+				background-color: var(--icon-card-dark-blue);
 			}
 		}
 
@@ -111,7 +111,7 @@
 			width: 32px;
 			height: 32px;
 			border-radius: 50%;
-			background: rgba(230, 230, 230, 0.5);
+			background: var(--bg-gray);
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -120,7 +120,7 @@
 			span {
 				height: 2px;
 				width: 60%;
-				background-color: #01579b;
+				background-color: var(--icon-card-dark-blue);
 				position: absolute;
 
 				&:first-child {
@@ -133,10 +133,12 @@
 			width: 43px;
 			height: 37px;
 			border-radius: 4px;
-			border: 1px solid #cccccc;
+			border: 1px solid var(--bg-gray);
+			background: var(--bg-white);
 			font-size: 18px;
 			margin: 0 22px;
 			text-align: center;
+			color: var(--text-black);
 		}
 	}
 
@@ -148,6 +150,7 @@
 		width: 16px;
 		height: 16px;
 		cursor: pointer;
+		color: var(--icon-const-red);
 	}
 }
 

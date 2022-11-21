@@ -7,9 +7,11 @@ interface CategoryCardProps {
 }
 
 const CategoryCard: FC<CategoryCardProps> = ({ title, icon, ...props }) => {
+	const Icon = icon
+
 	return (
 		<div {...props} className={styles.card}>
-			<img src={icon} alt='' />
+			<Icon />
 			<h4>{title}</h4>
 		</div>
 	)

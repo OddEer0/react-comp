@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { specialIcon } from '../../../../assets/img'
+import { BsCheckLg } from 'react-icons/bs'
 import styles from './InStockPendant.module.scss'
 
 interface InStockPendantProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -13,7 +13,7 @@ const InStockPendant: FC<InStockPendantProps> = ({
 }) => {
 	return (
 		<div className={[styles.pendant, className].join(' ')}>
-			<img src={specialIcon.check} alt='' />
+			<BsCheckLg className={styles.icon} />
 			{children}
 		</div>
 	)

@@ -1,4 +1,4 @@
-.section {
+.container {
 	display: flex;
 
 	.deviceImg {
@@ -24,20 +24,19 @@
 			}
 			.icons {
 				display: flex;
+				align-items: center;
 
-				img {
+				.heart {
+					font-size: 30px;
+					color: var(--icon-card-dark-blue);
 					cursor: pointer;
-					padding: 5px;
-					border-radius: 15px;
-					margin-left: 15px;
+					margin-right: 15px;
+				}
 
-					&.activeBasket {
-						background-color: rgba(24, 0, 240, 0.545);
-					}
-
-					&.activeFavorite {
-						background-color: rgb(255, 58, 58);
-					}
+				.cart {
+					font-size: 30px;
+					color: var(--icon-card-dark-blue);
+					cursor: pointer;
 				}
 			}
 		}

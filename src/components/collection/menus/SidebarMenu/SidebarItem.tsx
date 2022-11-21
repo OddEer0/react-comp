@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import styles from './SidebarMenu.module.scss'
-import { specialIcon, categoryImage } from '../../../../assets/img/index'
+import { categoryImage } from '../../../../assets/icon/category'
+import { IoIosArrowForward } from 'react-icons/io'
 import { ICategory } from '../../../../types/ICategory'
 
 interface SidebarItemProps {
@@ -10,11 +11,14 @@ interface SidebarItemProps {
 }
 
 const SidebarItem: FC<SidebarItemProps> = ({ item, onClick, ...props }) => {
+	const Icon = categoryImage[item.id - 1]
+	console.log(Icon)
+
 	return (
 		<div onClick={_ => onClick(item.id)} {...props}>
-			<img className={styles.icon} src={categoryImage[item.id - 1]} alt='' />
+			<Icon className={styles.icon} />
 			<h4>{item.title}</h4>
-			<img className={styles.arrow} src={specialIcon.arrow} alt='' />
+			<IoIosArrowForward className={styles.arrow} />
 		</div>
 	)
 }

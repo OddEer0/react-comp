@@ -29,6 +29,11 @@
 
 .logo {
 	margin-right: 5px;
+
+	& * {
+		stroke: var(--logo-blue);
+		fill: var(--logo-blue);
+	}
 }
 
 .navList {
@@ -65,6 +70,7 @@
 .iconList {
 	display: flex;
 	margin-left: 5px;
+	color: var(--icon-dark-blue);
 
 	.iconListItem:not(:last-child) {
 		margin-right: 20px;
@@ -110,6 +116,8 @@
 
 .auth {
 	cursor: pointer;
+	font-size: 32px;
+	color: var(--text-const-white);
 	transition: opacity 0.3s ease-in-out;
 
 	&:hover {
@@ -167,6 +175,8 @@
 
 .searchIcon {
 	display: none;
+	font-size: 36px;
+	cursor: pointer;
 }
 
 .rightBlock {
@@ -227,9 +237,14 @@
 
 .profile {
 	display: flex;
+	a {
+		display: flex;
+		align-items: center;
+	}
 	.arrow {
-		transform: rotate(180deg);
+		color: var(--text-const-white);
 		cursor: pointer;
+		font-size: 20px;
 	}
 	.userAvatar {
 		cursor: pointer;

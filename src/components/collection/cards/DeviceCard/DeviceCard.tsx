@@ -2,7 +2,6 @@
 import React, { FC, useMemo } from 'react'
 import styles from './DeviceCard.module.scss'
 import { IDevice } from '../../../../types/IDevice'
-import { headerImage } from '../../../../assets/img'
 import GreenButton from '../../../ui/buttons/GreenButton/GreenButton'
 import { useAppDispatch } from '../../../../hooks/redux'
 import {
@@ -20,6 +19,14 @@ import { Link } from 'react-router-dom'
 import NewPendant from '../../../ui/pendants/NewPendants/NewPendant'
 import List from '../../../shared/List/List'
 import { parseArrayInObj } from '../../../../utils/helpers/parseArrayInObj'
+import { msToDay } from '../../../../utils/helpers/msToDay'
+import {
+	BsCartCheckFill,
+	BsCartPlus,
+	BsHeart,
+	BsHeartFill,
+} from 'react-icons/bs'
+import { RiScales3Fill, RiScales3Line } from 'react-icons/ri'
 
 interface DeviceCardProps {
 	item: IDevice
@@ -47,33 +54,29 @@ const DeviceCard: FC<DeviceCardProps> = React.memo(
 		return (
 			<div className={styles.card}>
 				<div className={styles.header}>
-					{Date.now() / 1000 / 60 - item.date / 1000 / 60 < 4320 ? (
+					{msToDay(Date.now()) - msToDay(item.date) < 3 ? (
 						<NewPendant className={styles.new}>Новинка</NewPendant>
 					) : (
 						''
 					)}
-					<img
-						onClick={cartHandler}
-						style={{
-							background: isBasketItem ? 'rgba(24, 0, 240, 0.545)' : '',
-						}}
-						src={headerImage.cart}
-						alt=''
-					/>
-					<img
-						onClick={scalesHandler}
-						style={{ background: isScales ? 'rgba(24, 0, 240, 0.545)' : '' }}
-						src={headerImage.scales}
-						alt=''
-					/>
-					<button
-						className={
-							isFavorite
-								? [styles.heart, styles.heartActive].join(' ')
-								: styles.heart
-						}
-						onClick={heartHandler}
-					></button>
+					{isBasketItem ? (
+						<BsCartCheckFill className={styles.basket} onClick={cartHandler} />
+					) : (
+						<BsCartPlus className={styles.basket} onClick={cartHandler} />
+					)}
+					{isScales ? (
+						<RiScales3Fill className={styles.scales} onClick={scalesHandler} />
+					) : (
+						<RiScales3Line className={styles.scales} onClick={scalesHandler} />
+					)}
+					{isFavorite ? (
+						<BsHeartFill
+							className={styles.heartActive}
+							onClick={heartHandler}
+						/>
+					) : (
+						<BsHeart className={styles.heart} onClick={heartHandler} />
+					)}
 				</div>
 				<div className={styles.body}>
 					<Link to={`/react-comp/catalog/${item.category}/${item.id}`}>

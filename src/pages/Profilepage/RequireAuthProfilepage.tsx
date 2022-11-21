@@ -1,16 +1,16 @@
 import React, { FC } from 'react'
 import { Navigate } from 'react-router-dom'
 import { useAppSelector } from '../../hooks/redux'
-import Profilepage from './Profilepage'
+import ProfilePage from './ProfilePage'
 
-interface RequireAuthProfilepageProps {}
+interface RequireAuthProfilePageProps {}
 
-const RequireAuthProfilepage: FC<RequireAuthProfilepageProps> = props => {
+const RequireAuthProfilePage: FC<RequireAuthProfilePageProps> = props => {
 	const { role } = useAppSelector(state => state.user)
 
 	if (role === 'anonym') return <Navigate to='/react-comp' />
 
-	return <Profilepage />
+	return <ProfilePage />
 }
 
-export default RequireAuthProfilepage
+export default RequireAuthProfilePage

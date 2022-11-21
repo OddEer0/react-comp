@@ -91,7 +91,11 @@ const AuthModal: FC<AuthModalProps> = ({ show, setShow }) => {
 				<div className={styles.link}>
 					<Link to='/react-comp'>Забыли пароль?</Link>
 				</div>
-				<BlueButton style={{ width: '100%', height: '36px' }}>Вход</BlueButton>
+				<BlueButton
+					style={{ width: '100%', height: '36px', marginTop: '12px' }}
+				>
+					Вход
+				</BlueButton>
 				<div className={styles.line}>
 					<span></span>
 					<h4>или войти с помощью</h4>

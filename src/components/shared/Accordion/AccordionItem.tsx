@@ -1,6 +1,6 @@
 import React, { FC, useRef } from 'react'
+import { IoIosArrowDown } from 'react-icons/io'
 import { Link } from 'react-router-dom'
-import { specialIcon } from '../../../assets/img'
 import { useToggle } from '../../../hooks/useToggle'
 import { IAccordion } from '../../../types/IAccordion'
 import styles from './Accordion.module.scss'
@@ -30,11 +30,9 @@ const AccordionItem: FC<IAccordion> = ({ title, subItem }) => {
 				className={styles.accordionItem}
 			>
 				<h4>{title}</h4>{' '}
-				<img
-					className={styles.arrowWhite}
+				<IoIosArrowDown
 					style={{ transform: open ? 'rotate(180deg)' : '' }}
-					src={specialIcon.arrowWhite}
-					alt=''
+					className={styles.arrow}
 				/>
 			</button>
 			<div ref={subRef} className={styles.accordionSubItemBlock}>

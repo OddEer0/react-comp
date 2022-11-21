@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { headerImage, specialIcon } from '../../../assets/img'
+import { headerIcons } from '../../../assets/icon/header'
+import { TbUserCircle } from 'react-icons/tb'
 import { useAppSelector } from '../../../hooks/redux'
 import { useToggle } from '../../../hooks/useToggle'
 import { navListItems } from '../../../utils/constants/consts'
@@ -9,11 +10,13 @@ import MenuBurger from '../../collection/menus/MenuBurger/MenuBurger'
 import List from '../../shared/List/List'
 import styles from './Header.module.scss'
 import { BsMoonStars, BsSun } from 'react-icons/bs'
+import Container from '../Container/Container'
+import { IoIosArrowDown } from 'react-icons/io'
 
 interface HeaderFirstNavProps {}
 
 const HeaderFirstNav: FC<HeaderFirstNavProps> = props => {
-	const [theme, setTheme] = useState('light')
+	const [theme, setTheme] = useState('dark')
 	const { role, img, name } = useAppSelector(state => state.user)
 	const { state: showAuthModal, toggleHandler: toggleAuth } = useToggle(
 		false,
@@ -32,9 +35,11 @@ const HeaderFirstNav: FC<HeaderFirstNavProps> = props => {
 		document.body.dataset.theme = theme
 	}, [theme])
 
+	const Logo = headerIcons.Logo2
+
 	return (
 		<nav className={styles.navbarOne}>
-			<div className='container'>
+			<Container>
 				<div className={styles.navbarOneContent}>
 					<div className={styles.burgerAndList}>
 						<div className={styles.menuBurger} onClick={toggleMenuBurger}>
@@ -47,7 +52,7 @@ const HeaderFirstNav: FC<HeaderFirstNavProps> = props => {
 						/>
 					</div>
 					<Link to='/react-comp'>
-						<img className={styles.logoWhite} src={headerImage.Logo2} alt='' />
+						<Logo className={styles.logoWhite} />
 					</Link>
 					<div className={styles.rightBlock}>
 						{theme === 'light' ? (
@@ -62,20 +67,11 @@ const HeaderFirstNav: FC<HeaderFirstNavProps> = props => {
 							/>
 						)}
 						{role === 'anonym' ? (
-							<img
-								onClick={toggleAuth}
-								className={styles.auth}
-								src={headerImage.user}
-								alt=''
-							/>
+							<TbUserCircle onClick={toggleAuth} className={styles.auth} />
 						) : (
 							<div className={styles.profile}>
 								<Link to='profile'>
-									<img
-										className={styles.arrow}
-										src={specialIcon.arrowWhite}
-										alt=''
-									/>
+									<IoIosArrowDown className={styles.arrow} />
 									<img
 										title={name ? name : ''}
 										className={styles.userAvatar}
@@ -87,7 +83,7 @@ const HeaderFirstNav: FC<HeaderFirstNavProps> = props => {
 						)}
 					</div>
 				</div>
-			</div>
+			</Container>
 			<AuthModal show={showAuthModal} setShow={toggleAuth} />
 			<MenuBurger show={showMenuBurger} setShow={toggleMenuBurger} />
 		</nav>

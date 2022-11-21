@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { socialImage } from '../../../assets/img'
+import { socialIcons } from '../../../assets/icon/social'
 import styles from './Social.module.scss'
 
 interface SocialProps {}
@@ -9,7 +9,7 @@ const Social: FC<SocialProps> = props => {
 		<div className={styles.social}>
 			<h2>Следите за нами</h2>
 			<div className={styles.socialIcons}>
-				{socialImage.map((icon, index) => (
+				{socialIcons.map((icon, index) => (
 					<img key={index} src={icon} alt='' />
 				))}
 			</div>

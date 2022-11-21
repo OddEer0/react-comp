@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { FC, useEffect, useState } from 'react'
-import { specialIcon } from '../../../../assets/img'
+import { RiDeleteBin5Line } from 'react-icons/ri'
 import { useAppDispatch } from '../../../../hooks/redux'
 import { removeBasketItem } from '../../../../store/basket/basketSlice'
 import { IDevice } from '../../../../types/IDevice'
@@ -77,11 +77,9 @@ const BasketItem: FC<BasketItemProps> = ({ item, setTotalPrice, ...props }) => {
 			</div>
 			<div className={styles.wrapper2}>
 				<h2 className={styles.itemPrice}>{price} руб</h2>
-				<img
+				<RiDeleteBin5Line
 					onClick={_ => removeHandler(item.id)}
 					className={styles.deleteIcon}
-					src={specialIcon.deleteIcon}
-					alt=''
 				/>
 			</div>
 		</div>

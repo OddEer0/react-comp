@@ -1,6 +1,12 @@
 import React, { FC } from 'react'
+import {
+	BsCartCheckFill,
+	BsCartPlus,
+	BsHeart,
+	BsHeartFill,
+} from 'react-icons/bs'
 import { useNavigate } from 'react-router-dom'
-import { headerImage } from '../../../../assets/img'
+import Container from '../../../../components/layout/Container/Container'
 import GreenButton from '../../../../components/ui/buttons/GreenButton/GreenButton'
 import RedButton from '../../../../components/ui/buttons/RedButton/RedButton'
 import InStockPendant from '../../../../components/ui/pendants/InStockPendant/InStockPendant'
@@ -52,7 +58,7 @@ const FirstSection: FC<FirstSectionProps> = ({ item }) => {
 	}
 	return (
 		<section>
-			<div className={['container', styles.section].join(' ')}>
+			<Container className={styles.container}>
 				<img className={styles.deviceImg} src={item.img} alt='' />
 				<div className={styles.block}>
 					<div className={styles.headBlock}>
@@ -67,18 +73,22 @@ const FirstSection: FC<FirstSectionProps> = ({ item }) => {
 							)}
 						</div>
 						<div className={styles.icons}>
-							<img
-								onClick={favoriteHandler}
-								className={isFavorite ? styles.activeFavorite : ''}
-								src={headerImage.heart}
-								alt=''
-							/>
-							<img
-								onClick={basketHandler}
-								className={isBasketItem ? styles.activeBasket : ''}
-								src={headerImage.cart}
-								alt=''
-							/>
+							{isFavorite ? (
+								<BsHeartFill
+									onClick={favoriteHandler}
+									className={styles.heart}
+								/>
+							) : (
+								<BsHeart onClick={favoriteHandler} className={styles.heart} />
+							)}
+							{isBasketItem ? (
+								<BsCartCheckFill
+									onClick={basketHandler}
+									className={styles.cart}
+								/>
+							) : (
+								<BsCartPlus onClick={basketHandler} className={styles.cart} />
+							)}
 						</div>
 					</div>
 					<h1>{item.name}</h1>
@@ -90,7 +100,7 @@ const FirstSection: FC<FirstSectionProps> = ({ item }) => {
 						)}
 					</div>
 				</div>
-			</div>
+			</Container>
 		</section>
 	)
 }

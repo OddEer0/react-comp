@@ -38,7 +38,8 @@
 	}
 }
 
-.arrowWhite {
+.arrow {
+	color: var(--text-const-white);
 	position: absolute;
 	right: 10px;
 	transition: transform 0.3s ease-in-out;
