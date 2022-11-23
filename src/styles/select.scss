@@ -1,0 +1,27 @@
+.device-page-select {
+	&__control {
+		background: var(--select-bg) !important;
+
+		&--is-focused {
+			border-color: var(--select-option-hover) !important;
+		}
+	}
+
+	&__input {
+		color: var(--text-black) !important;
+	}
+
+	&__single-value {
+		color: var(--select-value) !important;
+	}
+
+	&__menu {
+		background: var(--select-bg) !important;
+	}
+
+	&__option {
+		&:hover {
+			background: var(--select-option-hover) !important;
+		}
+	}
+}

@@ -17,6 +17,54 @@
 	}
 }
 
+.cardVertical {
+	position: relative;
+	min-width: 242px;
+	width: 90%;
+	max-height: 435px;
+	box-shadow: 0px 2px 10px rgba(50, 50, 71, 0.14);
+	border-radius: 4px;
+	padding: 16px 12px;
+	margin: 16px;
+	display: flex;
+	background: var(--bg-device-card);
+
+	&:hover .footer {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.header {
+		position: absolute;
+		right: 40px;
+		top: 35px;
+	}
+
+	.body {
+		flex-direction: row;
+		align-items: center;
+
+		.name {
+			margin-left: 20px;
+		}
+
+		.rate {
+			position: absolute;
+			top: 80px;
+			right: 40px;
+		}
+
+		.saleBlock {
+			margin-top: 100px;
+			width: 170px;
+		}
+	}
+
+	.footer {
+		display: none;
+	}
+}
+
 .header {
 	display: flex;
 	justify-content: flex-end;

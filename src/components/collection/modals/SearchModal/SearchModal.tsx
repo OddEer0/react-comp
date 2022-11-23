@@ -4,6 +4,7 @@ import styles from './SearchModal.module.scss'
 import { useSearchDevice } from '../../../../hooks/useSearchDevice'
 import SearchModalItems from './SearchModalItems'
 import { FiSearch } from 'react-icons/fi'
+import EmptyCards from '../../../shared/Kostyl/Kostyl'
 
 interface SearchModalProps {
 	show: boolean
@@ -58,6 +59,7 @@ const SearchModal: FC<SearchModalProps> = ({ show, setShow }) => {
 						error={error}
 						isLoading={isLoading}
 					/>
+					<EmptyCards count={3} width={164} />
 				</div>
 			</div>
 			<div

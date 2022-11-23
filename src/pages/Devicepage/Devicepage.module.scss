@@ -4,8 +4,37 @@
 }
 
 .content {
+	min-height: 80vh;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
 	flex: 4;
+}
+
+.verticalContent {
+	min-height: 80vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.menu {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	.secondBlock {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		.select {
+			width: 320px;
+		}
+
+		.cardPosition {
+			margin-left: 15px;
+		}
+	}
 }

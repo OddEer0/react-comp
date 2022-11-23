@@ -12,6 +12,7 @@ interface DeviceCardsProps {
 	isLoading: boolean
 	notItemTitle?: string
 	skeletonCount?: number
+	vertical?: boolean
 }
 
 const DeviceCards: FC<DeviceCardsProps> = ({
@@ -20,6 +21,7 @@ const DeviceCards: FC<DeviceCardsProps> = ({
 	isLoading,
 	notItemTitle = 'Нет товаров',
 	skeletonCount = 10,
+	vertical = false,
 }) => {
 	const { basketItem } = useAppSelector(state => state.basket)
 	const { favoriteItems } = useAppSelector(state => state.favorite)
@@ -36,6 +38,7 @@ const DeviceCards: FC<DeviceCardsProps> = ({
 					<DeviceCard
 						key={device.id}
 						item={device}
+						vertical={vertical}
 						isBasketItem={basketItem.some(i => i.id === device.id)}
 						isFavorite={favoriteItems.some(i => i.id === device.id)}
 					/>

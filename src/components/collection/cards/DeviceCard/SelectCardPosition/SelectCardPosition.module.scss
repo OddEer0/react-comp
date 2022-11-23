@@ -1,0 +1,17 @@
+.block {
+	display: flex;
+	align-items: center;
+
+	.icon {
+		cursor: pointer;
+		font-size: 28px;
+
+		&:first-child {
+			margin-right: 10px;
+		}
+	}
+
+	.active {
+		color: var(--bg-lime);
+	}
+}

@@ -12,7 +12,6 @@ interface SidebarItemProps {
 
 const SidebarItem: FC<SidebarItemProps> = ({ item, onClick, ...props }) => {
 	const Icon = categoryImage[item.id - 1]
-	console.log(Icon)
 
 	return (
 		<div onClick={_ => onClick(item.id)} {...props}>

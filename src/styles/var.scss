@@ -21,6 +21,9 @@ body[data-theme='light'] {
 	--logo-blue: #01579b;
 	--bg-loader: #e0e0e0;
 	--loader-color: #337ab7;
+	--select-bg: white;
+	--select-value: gray;
+	--select-option-hover: rgb(29, 198, 217);
 }
 
 body[data-theme='dark'] {
@@ -29,7 +32,7 @@ body[data-theme='dark'] {
 	--bg-dark-blue: #111135;
 	--bg-header-white: #111135;
 	--bg-lime: #06a56c;
-	--bg-device-card: #060f42;
+	--bg-device-card: rgb(25, 25, 38);
 	--text-black: white;
 	--text-white: black;
 	--text-red: white;
@@ -46,4 +49,7 @@ body[data-theme='dark'] {
 	--logo-blue: white;
 	--bg-loader: #211f2d;
 	--loader-color: #ffcd1b;
+	--select-bg: rgb(25, 25, 38);
+	--select-value: white;
+	--select-option-hover: rgb(29, 198, 217);
 }

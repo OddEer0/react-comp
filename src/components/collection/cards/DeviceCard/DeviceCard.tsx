@@ -32,10 +32,11 @@ interface DeviceCardProps {
 	item: IDevice
 	isBasketItem?: boolean
 	isFavorite?: boolean
+	vertical?: boolean
 }
 
 const DeviceCard: FC<DeviceCardProps> = React.memo(
-	({ item, isBasketItem = false, isFavorite = false }) => {
+	({ item, isBasketItem = false, isFavorite = false, vertical = false }) => {
 		const dispatch = useAppDispatch()
 		const { state: isScales, toggleHandler: scalesHandler } = useToggle()
 		const cartHandler = useCooldownHandler(() => {
@@ -52,7 +53,7 @@ const DeviceCard: FC<DeviceCardProps> = React.memo(
 		}, [])
 
 		return (
-			<div className={styles.card}>
+			<div className={vertical ? styles.cardVertical : styles.card}>
 				<div className={styles.header}>
 					{msToDay(Date.now()) - msToDay(item.date) < 3 ? (
 						<NewPendant className={styles.new}>Новинка</NewPendant>

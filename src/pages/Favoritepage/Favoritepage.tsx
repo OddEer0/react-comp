@@ -3,6 +3,8 @@ import NotItems from '../../components/shared/NotItems/NotItems'
 import DeviceCard from '../../components/collection/cards/DeviceCard/DeviceCard'
 import { useAppSelector } from '../../hooks/redux'
 import styles from './FavoritePage.module.scss'
+import Container from '../../components/layout/Container/Container'
+import Kostyl from '../../components/shared/Kostyl/Kostyl'
 
 interface FavoritePageProps {}
 
@@ -11,7 +13,7 @@ const FavoritePage: FC<FavoritePageProps> = props => {
 	const { basketItem } = useAppSelector(state => state.basket)
 
 	return (
-		<div className={['container', styles.container].join(' ')}>
+		<Container className={styles.container}>
 			{favoriteItems.length ? (
 				<>
 					{favoriteItems.map(item => (
@@ -26,7 +28,8 @@ const FavoritePage: FC<FavoritePageProps> = props => {
 			) : (
 				<NotItems title='У вас нет фаворитов' />
 			)}
-		</div>
+			<Kostyl count={4} width={274} />
+		</Container>
 	)
 }
 

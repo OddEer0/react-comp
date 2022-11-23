@@ -5,6 +5,7 @@ import { IDevice } from '../../../../types/IDevice'
 import styles from './HomeSecondSection.module.scss'
 import DeviceCards from '../../../../components/collection/items/DeviceCards/DeviceCards'
 import Container from '../../../../components/layout/Container/Container'
+import EmptyCards from '../../../../components/shared/Kostyl/Kostyl'
 
 interface HomeSecondSectionProps {}
 
@@ -23,6 +24,7 @@ const HomeSecondSection: FC<HomeSecondSectionProps> = props => {
 						error={error}
 						isLoading={isLoading}
 					/>
+					<EmptyCards count={2} width={274} />
 				</div>
 			</Container>
 		</section>

@@ -17,9 +17,18 @@
 		img {
 			opacity: 0.8;
 		}
+
+		.icon {
+			opacity: 0.8;
+		}
 	}
 
 	img {
+		transition: opacity 0.3s ease-in-out;
+		margin-left: 10px;
+	}
+
+	.icon {
 		transition: opacity 0.3s ease-in-out;
 		margin-left: 10px;
 	}

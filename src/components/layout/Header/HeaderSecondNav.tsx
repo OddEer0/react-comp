@@ -32,6 +32,7 @@ const HeaderSecondNav: FC<HeaderSecondNavProps> = props => {
 		)
 
 	const Logo = headerIcons.Logo
+	const Catalog = headerIcons.catalog
 
 	return (
 		<nav className={styles.navbarTwo}>
@@ -41,7 +42,7 @@ const HeaderSecondNav: FC<HeaderSecondNavProps> = props => {
 						<Logo className={styles.logo} />
 					</Link>
 					<Link to='/react-comp/catalog'>
-						<GreenButton title='Каталог товаров' src={headerIcons.catalog} />
+						<GreenButton title='Каталог товаров' icon={Catalog} />
 					</Link>
 					<SearchModal show={showSearchBlock} setShow={setShowSearchBlock} />
 					<FiSearch
