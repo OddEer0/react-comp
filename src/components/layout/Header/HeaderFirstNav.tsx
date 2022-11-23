@@ -1,8 +1,9 @@
-import React, { FC, useEffect, useState } from 'react'
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { FC, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { headerIcons } from '../../../assets/icon/header'
 import { TbUserCircle } from 'react-icons/tb'
-import { useAppSelector } from '../../../hooks/redux'
+import { useAppDispatch, useAppSelector } from '../../../hooks/redux'
 import { useToggle } from '../../../hooks/useToggle'
 import { navListItems } from '../../../utils/constants/consts'
 import AuthModal from '../../collection/modals/AuthModal/AuthModal'
@@ -12,12 +13,13 @@ import styles from './Header.module.scss'
 import { BsMoonStars, BsSun } from 'react-icons/bs'
 import Container from '../Container/Container'
 import { IoIosArrowDown } from 'react-icons/io'
+import { setTheme } from '../../../store/user/userSlice'
 
 interface HeaderFirstNavProps {}
 
 const HeaderFirstNav: FC<HeaderFirstNavProps> = props => {
-	const [theme, setTheme] = useState('dark')
-	const { role, img, name } = useAppSelector(state => state.user)
+	const dispatch = useAppDispatch()
+	const { role, img, name, theme } = useAppSelector(state => state.user)
 	const { state: showAuthModal, toggleHandler: toggleAuth } = useToggle(
 		false,
 		400,
@@ -32,8 +34,8 @@ const HeaderFirstNav: FC<HeaderFirstNavProps> = props => {
 	)
 
 	useEffect(() => {
-		document.body.dataset.theme = theme
-	}, [theme])
+		dispatch(setTheme(theme))
+	}, [])
 
 	const Logo = headerIcons.Logo2
 
@@ -58,12 +60,12 @@ const HeaderFirstNav: FC<HeaderFirstNavProps> = props => {
 						{theme === 'light' ? (
 							<BsMoonStars
 								className={styles.themeIcon}
-								onClick={_ => setTheme('dark')}
+								onClick={_ => dispatch(setTheme('dark'))}
 							/>
 						) : (
 							<BsSun
 								className={styles.themeIcon}
-								onClick={_ => setTheme('light')}
+								onClick={_ => dispatch(setTheme('light'))}
 							/>
 						)}
 						{role === 'anonym' ? (

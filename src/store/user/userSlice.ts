@@ -8,6 +8,7 @@ const initialState: IUser = {
 	name: null,
 	role: 'anonym',
 	img: null,
+	theme: 'dark',
 }
 
 const userSlice = createSlice({
@@ -20,9 +21,13 @@ const userSlice = createSlice({
 		removeUser(state) {
 			return (state = initialState)
 		},
+		setTheme(state, action: PayloadAction<string>) {
+			document.body.dataset.theme = action.payload
+			state.theme = action.payload
+		},
 	},
 })
 
-export const { setUser, removeUser } = userSlice.actions
+export const { setUser, removeUser, setTheme } = userSlice.actions
 
 export default userSlice.reducer
