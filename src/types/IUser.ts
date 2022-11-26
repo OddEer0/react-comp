@@ -7,5 +7,4 @@ export interface IUser {
 	name: string | null
 	role: RoleType
 	img: string | null
-	theme: string
 }

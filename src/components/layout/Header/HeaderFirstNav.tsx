@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { FC, useEffect } from 'react'
+import React, { FC } from 'react'
 import { Link } from 'react-router-dom'
 import { headerIcons } from '../../../assets/icon/header'
 import { TbUserCircle } from 'react-icons/tb'
-import { useAppDispatch, useAppSelector } from '../../../hooks/redux'
+import { useAppSelector } from '../../../hooks/redux'
 import { useToggle } from '../../../hooks/useToggle'
 import { navListItems } from '../../../utils/constants/consts'
 import AuthModal from '../../collection/modals/AuthModal/AuthModal'
@@ -13,13 +13,13 @@ import styles from './Header.module.scss'
 import { BsMoonStars, BsSun } from 'react-icons/bs'
 import Container from '../Container/Container'
 import { IoIosArrowDown } from 'react-icons/io'
-import { setTheme } from '../../../store/user/userSlice'
+import { useTheme } from '../../../hooks/useTheme'
 
 interface HeaderFirstNavProps {}
 
 const HeaderFirstNav: FC<HeaderFirstNavProps> = props => {
-	const dispatch = useAppDispatch()
-	const { role, img, name, theme } = useAppSelector(state => state.user)
+	const [theme, setTheme] = useTheme('dark')
+	const { role, img, name } = useAppSelector(state => state.user)
 	const { state: showAuthModal, toggleHandler: toggleAuth } = useToggle(
 		false,
 		400,
@@ -32,10 +32,6 @@ const HeaderFirstNav: FC<HeaderFirstNavProps> = props => {
 		() => document.body.classList.add('no-scroll-1'),
 		() => document.body.classList.remove('no-scroll-1')
 	)
-
-	useEffect(() => {
-		dispatch(setTheme(theme))
-	}, [])
 
 	const Logo = headerIcons.Logo2
 
@@ -60,12 +56,12 @@ const HeaderFirstNav: FC<HeaderFirstNavProps> = props => {
 						{theme === 'light' ? (
 							<BsMoonStars
 								className={styles.themeIcon}
-								onClick={_ => dispatch(setTheme('dark'))}
+								onClick={_ => setTheme('dark')}
 							/>
 						) : (
 							<BsSun
 								className={styles.themeIcon}
-								onClick={_ => dispatch(setTheme('light'))}
+								onClick={_ => setTheme('light')}
 							/>
 						)}
 						{role === 'anonym' ? (
